@@ -24,9 +24,6 @@ under the License.
     <form name="CustomerProductFeedbackForm" type="single" target="feedback/add" title="${uiLabelMap.CustomerfeedbackLeaveFeedback}" default-map-name="feedbackCtx">
         <actions>
             <property-map resource="CustomerfeedbackUiLabels" map-name="uiLabelMap"/>
-            <if-not-empty field="userLogin">
-                <set field="feedbackCtx.createdByUserLogin" from-field="userLogin.userLoginId"/>
-            </if-not-empty>
         </actions>
         <field name="productId" title="${uiLabelMap.CommonProductId}">
             <text size="30" maxlength="20"/>
@@ -42,9 +39,6 @@ under the License.
         </field>
         <field name="comments" title="${uiLabelMap.CustomerfeedbackCommentsLabel}">
             <textarea cols="60" rows="5"/>
-        </field>
-        <field name="createdByUserLogin" title="">
-            <hidden value="${feedbackCtx.createdByUserLogin}"/>
         </field>
         <field name="submitButton" title="${uiLabelMap.CommonSubmit}">
             <submit/>
