@@ -22,6 +22,7 @@ import java.util.Map;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.HeaderParam;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -32,9 +33,15 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.Provider;
 
+import org.apache.ofbiz.base.util.Debug;
+import org.apache.ofbiz.base.util.UtilHttp;
 import org.apache.ofbiz.base.util.UtilMisc;
+import org.apache.ofbiz.base.util.UtilValidate;
 import org.apache.ofbiz.entity.GenericValue;
 import org.apache.ofbiz.entity.util.EntityUtilProperties;
+import org.apache.ofbiz.service.GenericServiceException;
+import org.apache.ofbiz.service.LocalDispatcher;
+import org.apache.ofbiz.service.ServiceUtil;
 import org.apache.ofbiz.webapp.control.JWTManager;
 import org.apache.ofbiz.ws.rs.security.AuthToken;
 import org.apache.ofbiz.ws.rs.util.RestApiUtil;
@@ -43,6 +50,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 
@@ -50,6 +58,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Provider
 @Tag(name = "Authentication Token Generating Resource", description = "Intended to provide generation of authentication tokens.")
 public class AuthenticationResource extends OFBizResource {
+
+    private static final String MODULE = AuthenticationResource.class.getName();
 
     @Context
     private HttpServletRequest httpRequest;
@@ -78,6 +88,63 @@ public class AuthenticationResource extends OFBizResource {
         Map<String, Object> tokenPayload = UtilMisc.toMap("access_token", jwtToken, "refresh_token", refreshToken,
                 "expires_in", EntityUtilProperties.getPropertyValue("security", "security.jwt.token.expireTime", "1800", getDelegator()),
                 "token_type", "Bearer");
+        return RestApiUtil.success("Token granted.", tokenPayload);
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/token/login")
+    @Operation(operationId = "loginAndGetAuthToken", description = "Generates JWT token using username and password credentials.")
+    public Response loginAndGetAuthToken(@RequestBody(required = true, description = "Credentials containing username and password.")
+            Map<String, String> credentials) {
+        if (credentials == null) {
+            return RestApiUtil.error(Response.Status.BAD_REQUEST.getStatusCode(), Response.Status.BAD_REQUEST.getReasonPhrase(),
+                    "Request body is required.");
+        }
+
+        String username = credentials.get("username");
+        String password = credentials.get("password");
+
+        if (UtilValidate.isEmpty(username) || UtilValidate.isEmpty(password)) {
+            return RestApiUtil.error(Response.Status.BAD_REQUEST.getStatusCode(), Response.Status.BAD_REQUEST.getReasonPhrase(),
+                    "Both username and password are required.");
+        }
+
+        LocalDispatcher dispatcher = getDispatcher();
+        Map<String, Object> loginResult;
+        try {
+            Map<String, Object> serviceCtx = UtilMisc.toMap("login.username", username, "login.password", password,
+                    "locale", UtilHttp.getLocale(httpRequest));
+            loginResult = dispatcher.runSync("userLogin", serviceCtx);
+        } catch (GenericServiceException e) {
+            Debug.logError(e, "Error calling userLogin service", MODULE);
+            return RestApiUtil.error(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(),
+                    Response.Status.INTERNAL_SERVER_ERROR.getReasonPhrase(), "Unable to authenticate user at this time.");
+        }
+
+        if (!ServiceUtil.isSuccess(loginResult)) {
+            return RestApiUtil.error(Response.Status.UNAUTHORIZED.getStatusCode(), Response.Status.UNAUTHORIZED.getReasonPhrase(),
+                    ServiceUtil.getErrorMessage(loginResult));
+        }
+
+        GenericValue userLogin = (GenericValue) loginResult.get("userLogin");
+        if (userLogin == null) {
+            return RestApiUtil.error(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(),
+                    Response.Status.INTERNAL_SERVER_ERROR.getReasonPhrase(), "Unable to retrieve user login information.");
+        }
+
+        httpRequest.setAttribute("delegator", getDelegator());
+        httpRequest.setAttribute("dispatcher", dispatcher);
+        httpRequest.setAttribute("userLogin", userLogin);
+
+        String jwtToken = JWTManager.createJwt(getDelegator(), UtilMisc.toMap("userLoginId", userLogin.getString("userLoginId")));
+        String refreshToken = JWTManager.createRefreshToken(getDelegator(), userLogin.getString("userLoginId"));
+
+        Map<String, Object> tokenPayload = UtilMisc.toMap("access_token", jwtToken, "refresh_token", refreshToken, "expires_in",
+                EntityUtilProperties.getPropertyValue("security", "security.jwt.token.expireTime", "1800", getDelegator()),
+                "token_type", "Bearer");
+
         return RestApiUtil.success("Token granted.", tokenPayload);
     }
 
