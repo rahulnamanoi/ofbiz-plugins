@@ -38,4 +38,7 @@ under the License.
     <property key="CustomerFeedbackEmpty">
         <value xml:lang="en">There is no feedback for this product yet.</value>
     </property>
+    <property key="CustomerFeedbackWebappInfo">
+        <value xml:lang="en">Use the product catalog to review or add customer feedback entries.</value>
+    </property>
 </resource>
