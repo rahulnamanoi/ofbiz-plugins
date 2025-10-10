@@ -28,4 +28,30 @@ under the License.
     <copyright></copyright>
     <version></version>
 
+    <entity entity-name="CustomerProductFeedback" package-name="org.apache.ofbiz.customerfeedback"
+            title="Customer Product Feedback" sequence-bank-size="1">
+        <field name="feedbackId" type="id"/>
+        <field name="productId" type="id"/>
+        <field name="partyId" type="id"/>
+        <field name="rating" type="numeric" precision="20" scale="2"/>
+        <field name="comments" type="long-varchar"/>
+        <field name="submittedDate" type="date-time"/>
+        <field name="statusId" type="id"/>
+        <field name="createdByUserLogin" type="id"/>
+
+        <prim-key field="feedbackId"/>
+
+        <relation type="one" fk-name="CPFB_PROD" rel-entity-name="Product">
+            <key-map field-name="productId"/>
+        </relation>
+        <relation type="one" fk-name="CPFB_PARTY" rel-entity-name="Party">
+            <key-map field-name="partyId"/>
+        </relation>
+        <relation type="one" fk-name="CPFB_STATUS" rel-entity-name="StatusItem">
+            <key-map field-name="statusId"/>
+        </relation>
+        <relation type="one" fk-name="CPFB_USERLGN" rel-entity-name="UserLogin">
+            <key-map field-name="createdByUserLogin"/>
+        </relation>
+    </entity>
 </entitymodel>

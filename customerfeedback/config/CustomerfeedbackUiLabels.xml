@@ -17,7 +17,6 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-
 <!-- Keep only English language here because of OFBIZ-13095 -->
 
 <resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
@@ -32,5 +31,35 @@ under the License.
     </property>
     <property key="CustomerfeedbackViewPermissionError">
         <value xml:lang="en">You are not allowed to view this page.</value>
+    </property>
+    <property key="CustomerfeedbackWelcomeHeading">
+        <value xml:lang="en">Customer Product Feedback</value>
+    </property>
+    <property key="CustomerfeedbackWelcomeMessage">
+        <value xml:lang="en">Share your product experience or review the submissions collected from customers.</value>
+    </property>
+    <property key="CustomerfeedbackLeaveFeedback">
+        <value xml:lang="en">Leave Feedback</value>
+    </property>
+    <property key="CustomerfeedbackFeedbackSubmittedHeading">
+        <value xml:lang="en">Thank You!</value>
+    </property>
+    <property key="CustomerfeedbackFeedbackSubmittedMessage">
+        <value xml:lang="en">Your feedback has been recorded successfully.</value>
+    </property>
+    <property key="CustomerfeedbackFeedbackIdLabel">
+        <value xml:lang="en">Feedback Id</value>
+    </property>
+    <property key="CustomerfeedbackBackToHome">
+        <value xml:lang="en">Back to Home</value>
+    </property>
+    <property key="CustomerfeedbackPartyIdLabel">
+        <value xml:lang="en">Customer Party Id</value>
+    </property>
+    <property key="CustomerfeedbackRatingLabel">
+        <value xml:lang="en">Rating</value>
+    </property>
+    <property key="CustomerfeedbackCommentsLabel">
+        <value xml:lang="en">Comments</value>
     </property>
 </resource>

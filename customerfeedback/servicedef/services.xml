@@ -24,10 +24,10 @@ under the License.
     <vendor></vendor>
     <version>1.0</version>
 
-    <service name="noSyntaxError" engine="interface">
-        <description>
-            Dummy service to prevent empty files and syntax error - Remove when the 1st real service will be added here 
-        </description>
-    </service> 
-    
+    <service name="createCustomerProductFeedback" engine="simple" auth="false"
+            location="component://customerfeedback/minilang/CustomerFeedbackServices.xml"
+            invoke="createCustomerProductFeedback">
+        <description>Create a customer product feedback record.</description>
+    </service>
+
 </services>
