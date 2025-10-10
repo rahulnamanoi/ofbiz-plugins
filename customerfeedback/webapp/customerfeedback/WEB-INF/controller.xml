@@ -39,7 +39,7 @@ under the License.
 
     <request-map uri="feedback/add" method="post">
         <security https="true" auth="false"/>
-        <event type="service" service-name="createCustomerProductFeedback"/>
+        <event type="service" invoke="createCustomerProductFeedback"/>
         <response name="success" type="view" value="FeedbackSubmissionResult"/>
         <response name="error" type="view" value="FeedbackForm"/>
     </request-map>
