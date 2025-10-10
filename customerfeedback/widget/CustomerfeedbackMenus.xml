@@ -17,8 +17,9 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-
 <menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ofbiz.apache.org/Widget-Menu" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Menu http://ofbiz.apache.org/dtds/widget-menu.xsd">
     <menu name="MainAppBar" title="${uiLabelMap.CustomerfeedbackApplication}" extends="CommonAppBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
+        <menu-item name="main" title="${uiLabelMap.CommonHome}" url="main"/>
+        <menu-item name="feedbackForm" title="${uiLabelMap.CustomerfeedbackLeaveFeedback}" url="feedback/form"/>
     </menu>
 </menus>

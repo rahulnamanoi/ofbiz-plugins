@@ -25,10 +25,57 @@ under the License.
         <section>
             <actions>
                 <set field="headerItem" value="main"/><!-- this highlights the selected menu-item with name "main" -->
+                <property-map resource="CustomerfeedbackUiLabels" map-name="uiLabelMap" global="false"/>
             </actions>
             <widgets>
                 <decorator-screen name="CustomerfeedbackCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
+                        <section>
+                            <widgets>
+                                <label style="h2">${uiLabelMap.CustomerfeedbackWelcomeHeading}</label>
+                                <paragraph>${uiLabelMap.CustomerfeedbackWelcomeMessage}</paragraph>
+                                <link target="feedback/form" text="${uiLabelMap.CustomerfeedbackLeaveFeedback}"/>
+                            </widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="FeedbackForm">
+        <section>
+            <actions>
+                <set field="headerItem" value="feedbackForm"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="CustomerfeedbackCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <widgets>
+                                <label style="h2">${uiLabelMap.CustomerfeedbackLeaveFeedback}</label>
+                                <include-form name="CustomerProductFeedbackForm" location="component://customerfeedback/widget/CustomerfeedbackForms.xml"/>
+                            </widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="FeedbackSubmissionResult">
+        <section>
+            <widgets>
+                <decorator-screen name="CustomerfeedbackCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <widgets>
+                                <label style="h2">${uiLabelMap.CustomerfeedbackFeedbackSubmittedHeading}</label>
+                                <paragraph>${uiLabelMap.CustomerfeedbackFeedbackSubmittedMessage}</paragraph>
+                                <label>${uiLabelMap.CustomerfeedbackFeedbackIdLabel}: ${feedbackId}</label>
+                                <link target="main" text="${uiLabelMap.CustomerfeedbackBackToHome}"/>
+                            </widgets>
+                        </section>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
