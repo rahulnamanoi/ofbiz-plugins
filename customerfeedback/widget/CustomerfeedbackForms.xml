@@ -40,7 +40,7 @@ under the License.
         <field name="comments" title="${uiLabelMap.CustomerfeedbackCommentsLabel}">
             <textarea cols="60" rows="5"/>
         </field>
-        <field name="createdByUserLogin" position="hidden">
+        <field name="createdByUserLogin" title="">
             <hidden default-value="${userLogin.userLoginId}"/>
         </field>
         <field name="submitButton" title="">
