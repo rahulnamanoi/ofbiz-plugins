@@ -13,11 +13,16 @@
      See the License for the specific language governing permissions and
      limitations under the License. -->
 
-<ofbiz-component name="My Plugin Component" component-id="myplugin" component-type="plugin">
-    <depends-on component-name="ofbiz" />
-    <resource-loader name="main" type="component" location="." />
-    <entity-resource type="model" reader-name="main" loader="main" location="entitydef" />
-    <service-resource type="model" loader="main" location="servicedef" />
-    <webapp name="myplugin" title="My Plugin" location="webapp/myplugin" server="default-server" />
-    <base-permission role-type-id="ADMIN" permission="OFBTOOLS_VIEW" />
-</ofbiz-component>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/service-2.1.xsd">
+    <description>Services for My Plugin</description>
+
+    <service name="helloWorldService"
+             engine="simple"
+             location="component://myplugin/script/org/ofbiz/myplugin/HelloWorld.groovy"
+             invoke="run">
+        <description>Returns a simple greeting message.</description>
+        <attribute name="name" type="String" mode="IN" optional="false"/>
+        <attribute name="message" type="String" mode="OUT" optional="false"/>
+    </service>
+</services>

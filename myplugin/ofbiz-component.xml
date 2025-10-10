@@ -13,16 +13,18 @@
      See the License for the specific language governing permissions and
      limitations under the License. -->
 
-<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/service-2.1.xsd">
-    <description>Services for My Plugin</description>
-
-    <service name="helloWorldService"
-             engine="simple"
-             location="component://myplugin/script/org/ofbiz/myplugin/HelloWorld.groovy"
-             invoke="run" >
-        <description>Returns a simple greeting message.</description>
-        <attribute name="name" type="String" mode="IN" optional="false" />
-        <attribute name="message" type="String" mode="OUT" optional="false" />
-    </service>
-</services>
+<ofbiz-component name="My Plugin Component"
+                 component-id="myplugin"
+                 component-type="plugin"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/ofbiz-component.xsd">
+    <resource-loader name="main" type="component"/>
+    <classpath type="dir" location="config"/>
+    <entity-resource type="model" loader="main" location="entitydef"/>
+    <service-resource type="model" loader="main" location="servicedef/services.xml"/>
+    <webapp name="myplugin"
+            title="My Plugin"
+            server="default-server"
+            location="webapp/myplugin"
+            mount-point="/myplugin"/>
+</ofbiz-component>
