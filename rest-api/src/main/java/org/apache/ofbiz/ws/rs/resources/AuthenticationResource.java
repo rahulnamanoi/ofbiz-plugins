@@ -91,6 +91,13 @@ public class AuthenticationResource extends OFBizResource {
         return RestApiUtil.success("Token granted.", tokenPayload);
     }
 
+    /**
+     * Exchanges OFBiz credentials for an access and refresh token pair.
+     * <p>
+     * This method is exposed at <code>POST /rest/auth/token/login</code> when the REST plugin is deployed with its default
+     * servlet mapping.
+     * </p>
+     */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

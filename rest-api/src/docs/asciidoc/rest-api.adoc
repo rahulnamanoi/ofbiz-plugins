@@ -42,7 +42,10 @@ If successfully validated, generated token should be received in response
 }
 ----
 
-To authenticate without relying on Basic Authentication headers you can call the login endpoint directly with the credentials:
+To authenticate without relying on Basic Authentication headers you can call the login endpoint directly with the credentials.
+The REST component is mounted under `/rest` by default, so when using the standard embedded Tomcat configuration the fully-qualified
+URL will be `https://localhost:8443/rest/auth/token/login`. Replace `localhost` and the port with the values that match your
+deployment if you are running OFBiz behind a proxy or on a different host.
 
 [source, json]
 ----
