@@ -21,6 +21,9 @@ package org.apache.ofbiz.customerfeedback
 import java.sql.Timestamp
 
 import org.apache.ofbiz.base.util.UtilDateTime
+import org.apache.ofbiz.entity.Delegator
+import org.apache.ofbiz.entity.GenericValue
+import org.apache.ofbiz.service.DispatchContext
 import org.apache.ofbiz.service.ServiceUtil
 
 /**
@@ -31,13 +34,14 @@ class CustomerFeedbackServices {
     /**
      * Creates a new customer feedback entry.
      */
-    static Map<String, Object> createCustomerFeedback() {
-        Map<String, Object> result
-        String productId = parameters.productId
-        String customerId = parameters.customerId
-        Double rating = parameters.rating as Double
-        String comments = parameters.comments
-        Timestamp createdDate = parameters.createdDate as Timestamp ?: UtilDateTime.nowTimestamp()
+    static Map<String, Object> createCustomerFeedback(DispatchContext dctx, Map<String, ? extends Object> context) {
+        Delegator delegator = dctx.delegator
+
+        String productId = context.productId as String
+        String customerId = context.customerId as String
+        Double rating = context.rating != null ? (context.rating as Double) : null
+        String comments = context.comments as String
+        Timestamp createdDate = context.createdDate as Timestamp ?: UtilDateTime.nowTimestamp()
 
         if (!productId) {
             return ServiceUtil.returnError("productId is required")
@@ -61,9 +65,11 @@ class CustomerFeedbackServices {
             comments   : comments,
             createdDate: createdDate
         ]
-        delegator.create("CustomerFeedback", feedbackFields)
 
-        result = ServiceUtil.returnSuccess()
+        GenericValue feedback = delegator.makeValue("CustomerFeedback", feedbackFields)
+        feedback.create()
+
+        Map<String, Object> result = ServiceUtil.returnSuccess()
         result.feedbackId = feedbackId
         return result
     }
