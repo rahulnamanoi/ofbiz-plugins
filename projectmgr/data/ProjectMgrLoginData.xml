@@ -42,9 +42,9 @@ under the License.
     <UserLogin userLoginId="admin" partyId="admin" currentPassword="{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a" passwordHint="Default password: ofbiz" enabled="Y" create-or-update="true"/>
 
     <!-- Attach the ProjectMgr admin login to the relevant security groups. -->
-    <UserLoginSecurityGroup userLoginId="admin" groupId="PROJECTADMIN" fromDate="2000-01-01 00:00:00.0"/>
-    <UserLoginSecurityGroup userLoginId="admin" groupId="PROJECTUSER" fromDate="2000-01-01 00:00:00.0"/>
-    <UserLoginSecurityGroup userLoginId="admin" groupId="SUPER" fromDate="2000-01-01 00:00:00.0"/>
+    <UserLoginSecurityGroup userLoginId="admin" groupId="PROJECTADMIN" fromDate="2000-01-01 00:00:00.0" create-or-update="true"/>
+    <UserLoginSecurityGroup userLoginId="admin" groupId="PROJECTUSER" fromDate="2000-01-01 00:00:00.0" create-or-update="true"/>
+    <UserLoginSecurityGroup userLoginId="admin" groupId="SUPER" fromDate="2000-01-01 00:00:00.0" create-or-update="true"/>
 
     <!-- Make the ProjectMgr admin party available for project team membership. -->
     <PartyRole partyId="admin" roleTypeId="EMPLOYEE" create-or-update="true"/>
