@@ -20,35 +20,35 @@ under the License.
 
 <entity-engine-xml>
 
-    <!-- Seed a dedicated ProjectMgr administrator login that can be loaded with the "login" reader. -->
+    <!-- Ensure the core admin login is provisioned for ProjectMgr access when loading the "login" reader. -->
 
     <!-- Security groups that ProjectMgr relies on. -->
-    <SecurityGroup groupId="PROJECTADMIN" description="Project Admin group, has update access to own projects."/>
-    <SecurityGroupPermission groupId="PROJECTADMIN" permissionId="PROJECTMGR_ROLE_ADMIN" fromDate="2001-05-13 12:00:00.0"/>
-    <SecurityGroupPermission groupId="PROJECTADMIN" permissionId="PROJECTMGR_VIEW" fromDate="2001-05-13 12:00:00.0"/>
-    <SecurityGroupPermission groupId="PROJECTADMIN" permissionId="PROJECTMGR_TIMESHEET_CREATE" fromDate="2001-05-13 12:00:00.0"/>
-    <SecurityGroupPermission groupId="PROJECTADMIN" permissionId="PROJECTMGR_TIMESHEET_UPDATE" fromDate="2001-05-13 12:00:00.0"/>
+    <SecurityGroup groupId="PROJECTADMIN" description="Project Admin group, has update access to own projects." create-or-update="true"/>
+    <SecurityGroupPermission groupId="PROJECTADMIN" permissionId="PROJECTMGR_ROLE_ADMIN" fromDate="2001-05-13 12:00:00.0" create-or-update="true"/>
+    <SecurityGroupPermission groupId="PROJECTADMIN" permissionId="PROJECTMGR_VIEW" fromDate="2001-05-13 12:00:00.0" create-or-update="true"/>
+    <SecurityGroupPermission groupId="PROJECTADMIN" permissionId="PROJECTMGR_TIMESHEET_CREATE" fromDate="2001-05-13 12:00:00.0" create-or-update="true"/>
+    <SecurityGroupPermission groupId="PROJECTADMIN" permissionId="PROJECTMGR_TIMESHEET_UPDATE" fromDate="2001-05-13 12:00:00.0" create-or-update="true"/>
 
-    <SecurityGroup groupId="PROJECTUSER" description="Project User group, has read, task create/assign and timesheet create/update access to own projects."/>
-    <SecurityGroupPermission groupId="PROJECTUSER" permissionId="PROJECTMGR_VIEW" fromDate="2001-05-13 12:00:00.0"/>
-    <SecurityGroupPermission groupId="PROJECTUSER" permissionId="PROJECTMGR_ROLE_VIEW" fromDate="2001-05-13 12:00:00.0"/>
-    <SecurityGroupPermission groupId="PROJECTUSER" permissionId="PROJECTMGR_ROLE_TASK_CREATE" fromDate="2001-05-13 12:00:00.0"/>
-    <SecurityGroupPermission groupId="PROJECTUSER" permissionId="PROJECTMGR_ROLE_TIMESHEET_CREATE" fromDate="2001-05-13 12:00:00.0"/>
-    <SecurityGroupPermission groupId="PROJECTUSER" permissionId="PROJECTMGR_ROLE_TIMESHEET_UPDATE" fromDate="2001-05-13 12:00:00.0"/>
+    <SecurityGroup groupId="PROJECTUSER" description="Project User group, has read, task create/assign and timesheet create/update access to own projects." create-or-update="true"/>
+    <SecurityGroupPermission groupId="PROJECTUSER" permissionId="PROJECTMGR_VIEW" fromDate="2001-05-13 12:00:00.0" create-or-update="true"/>
+    <SecurityGroupPermission groupId="PROJECTUSER" permissionId="PROJECTMGR_ROLE_VIEW" fromDate="2001-05-13 12:00:00.0" create-or-update="true"/>
+    <SecurityGroupPermission groupId="PROJECTUSER" permissionId="PROJECTMGR_ROLE_TASK_CREATE" fromDate="2001-05-13 12:00:00.0" create-or-update="true"/>
+    <SecurityGroupPermission groupId="PROJECTUSER" permissionId="PROJECTMGR_ROLE_TIMESHEET_CREATE" fromDate="2001-05-13 12:00:00.0" create-or-update="true"/>
+    <SecurityGroupPermission groupId="PROJECTUSER" permissionId="PROJECTMGR_ROLE_TIMESHEET_UPDATE" fromDate="2001-05-13 12:00:00.0" create-or-update="true"/>
 
-    <!-- Define an administrator party and login specific to ProjectMgr. -->
-    <Party partyId="ProjectMgrAdmin" partyTypeId="PERSON" statusId="PARTY_ENABLED"/>
-    <Person partyId="ProjectMgrAdmin" firstName="ProjectMgr" lastName="Administrator"/>
-    <UserLogin userLoginId="ProjectMgrAdmin" partyId="ProjectMgrAdmin" currentPassword="{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a" passwordHint="Default password: ofbiz" enabled="Y"/>
+    <!-- Define or update the administrator party and login for ProjectMgr access. -->
+    <Party partyId="admin" partyTypeId="PERSON" statusId="PARTY_ENABLED" create-or-update="true"/>
+    <Person partyId="admin" firstName="System" lastName="Administrator" create-or-update="true"/>
+    <UserLogin userLoginId="admin" partyId="admin" currentPassword="{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a" passwordHint="Default password: ofbiz" enabled="Y" create-or-update="true"/>
 
     <!-- Attach the ProjectMgr admin login to the relevant security groups. -->
-    <UserLoginSecurityGroup userLoginId="ProjectMgrAdmin" groupId="PROJECTADMIN" fromDate="2000-01-01 00:00:00.0"/>
-    <UserLoginSecurityGroup userLoginId="ProjectMgrAdmin" groupId="PROJECTUSER" fromDate="2000-01-01 00:00:00.0"/>
-    <UserLoginSecurityGroup userLoginId="ProjectMgrAdmin" groupId="SUPER" fromDate="2000-01-01 00:00:00.0"/>
+    <UserLoginSecurityGroup userLoginId="admin" groupId="PROJECTADMIN" fromDate="2000-01-01 00:00:00.0" create-or-update="true"/>
+    <UserLoginSecurityGroup userLoginId="admin" groupId="PROJECTUSER" fromDate="2000-01-01 00:00:00.0" create-or-update="true"/>
+    <UserLoginSecurityGroup userLoginId="admin" groupId="SUPER" fromDate="2000-01-01 00:00:00.0" create-or-update="true"/>
 
     <!-- Make the ProjectMgr admin party available for project team membership. -->
-    <PartyRole partyId="ProjectMgrAdmin" roleTypeId="EMPLOYEE"/>
-    <PartyRole partyId="ProjectMgrAdmin" roleTypeId="PROJECT_TEAM"/>
-    <PartyRole partyId="ProjectMgrAdmin" roleTypeId="PROVIDER_MANAGER"/>
+    <PartyRole partyId="admin" roleTypeId="EMPLOYEE" create-or-update="true"/>
+    <PartyRole partyId="admin" roleTypeId="PROJECT_TEAM" create-or-update="true"/>
+    <PartyRole partyId="admin" roleTypeId="PROVIDER_MANAGER" create-or-update="true"/>
 
 </entity-engine-xml>
