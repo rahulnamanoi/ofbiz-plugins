@@ -31,7 +31,9 @@ under the License.
     <entity-resource type="data" reader-name="seed" loader="main" location="data/ProjectMgrSecurityPermissionSeedData.xml"/>
     <entity-resource type="data" reader-name="demo" loader="main" location="data/ProjectMgrSecurityGroupDemoData.xml"/>
     <entity-resource type="data" reader-name="seed" loader="main" location="data/ProjectMgrPortletData.xml"/>
-    
+
+    <entity-resource type="data" reader-name="login" loader="main" location="data/ProjectMgrLoginData.xml"/>
+
     <entity-resource type="data" reader-name="seed-initial" loader="main" location="data/ProjectMgrSystemPropertyData.xml"/>
     
     <entity-resource type="data" reader-name="demo" loader="main" location="data/ProjectMgrDemoData.xml"/>
