@@ -72,10 +72,70 @@
                         <screenlet title="${uiLabelMap.PageTitleEditTenant}">
                             <include-form name="EditTenantForm" location="component://MultTenant/widget/MultTenantForms.xml"/>
                         </screenlet>
+
+                        <!-- Domain Names Section -->
+                        <screenlet title="${uiLabelMap.MultTenantDomainNames}">
+                            <container style="button-bar">
+                                <link target="EditTenantDomain" text="${uiLabelMap.MultTenantAddDomain}" style="buttontext create">
+                                    <parameter param-name="tenantId"/>
+                                </link>
+                            </container>
+                            <include-form name="ListTenantDomains" location="component://MultTenant/widget/MultTenantForms.xml"/>
+                        </screenlet>
+
+                        <!-- Data Sources Section -->
+                        <screenlet title="${uiLabelMap.MultTenantDataSources}">
+                            <container style="button-bar">
+                                <link target="EditTenantDataSource" text="${uiLabelMap.MultTenantAddDataSource}" style="buttontext create">
+                                    <parameter param-name="tenantId"/>
+                                </link>
+                            </container>
+                            <include-form name="ListTenantDataSources" location="component://MultTenant/widget/MultTenantForms.xml"/>
+                        </screenlet>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
         </section>
     </screen>
 
+    <!-- Edit Tenant Domain Screen -->
+    <screen name="EditTenantDomain">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleEditTenantDomain"/>
+                <set field="headerItem" value="EditTenant"/>
+                <entity-one entity-name="TenantDomainName" value-field="tenantDomain"/>
+                <entity-one entity-name="Tenant" value-field="tenant"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="MultTenantCommonDecorator" location="component://MultTenant/widget/CommonScreens.xml">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap.PageTitleEditTenantDomain}">
+                            <include-form name="EditTenantDomainForm" location="component://MultTenant/widget/MultTenantForms.xml"/>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+    <!-- Edit Tenant Data Source Screen -->
+    <screen name="EditTenantDataSource">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleEditTenantDataSource"/>
+                <set field="headerItem" value="EditTenant"/>
+                <entity-one entity-name="TenantDataSource" value-field="tenantDataSource"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="MultTenantCommonDecorator" location="component://MultTenant/widget/CommonScreens.xml">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap.PageTitleEditTenantDataSource}">
+                            <include-form name="EditTenantDataSourceForm" location="component://MultTenant/widget/MultTenantForms.xml"/>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
 </screens>

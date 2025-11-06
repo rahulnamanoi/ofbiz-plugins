@@ -35,15 +35,16 @@ under the License.
     </form>
 
     <!-- Create/Edit Tenant Form -->
-    <form name="EditTenantForm" type="single" target="createTenant" default-entity-name="Tenant">
-        <alt-target use-when="tenantId!=null" target="updateTenant"/>
-        <auto-fields-service service-name="createTenant"/>
+    <form name="EditTenantForm" type="single" target="createTenant" default-entity-name="Tenant" default-map-name="tenant">
+        <alt-target use-when="parameters.tenantId!=null" target="updateTenant"/>
+        <auto-fields-entity entity-name="Tenant" default-field-type="edit"/>
 
-        <field name="tenantId" use-when="tenantId==null"><text/></field>
-        <field name="tenantId" use-when="tenantId!=null"><display/></field>
+        <field name="tenantId" use-when="parameters.tenantId==null"><text/></field>
+        <field name="tenantId" use-when="parameters.tenantId!=null"><display/></field>
 
         <field name="tenantName"><text size="30" maxlength="60"/></field>
         <field name="initialPath"><text size="60" maxlength="255"/></field>
+
         <field name="disabled">
             <drop-down allow-empty="false" no-current-selected-key="N">
                 <option key="N" description="${uiLabelMap.CommonN}"/>
@@ -66,4 +67,69 @@ under the License.
         </field>
     </form>
 
+    <!-- List Tenant Domains Form -->
+    <form name="ListTenantDomains" type="list" list-name="tenantDomains" paginate-target="EditTenant" default-entity-name="TenantDomainName">
+        <actions>
+            <entity-condition entity-name="TenantDomainName" list="tenantDomains">
+                <condition-expr field-name="tenantId" from-field="parameters.tenantId"/>
+            </entity-condition>
+        </actions>
+        <field name="tenantId"><hidden/></field>
+        <field name="domainName"><display/></field>
+        <field name="deleteLink" title=" " widget-style="buttontext">
+            <hyperlink description="${uiLabelMap.CommonDelete}" target="deleteTenantDomain" also-hidden="false">
+                <parameter param-name="tenantId"/>
+                <parameter param-name="domainName"/>
+            </hyperlink>
+        </field>
+    </form>
+
+    <!-- Create/Edit Tenant Domain Form -->
+    <form name="EditTenantDomainForm" type="single" target="createTenantDomain" default-entity-name="TenantDomainName" default-map-name="tenant">
+        <alt-target use-when="domainName!=null" target="updateTenantDomain"/>
+        <auto-attributes include="pk" mode="IN" optional="false"/>
+        <auto-attributes include="nonpk" mode="IN" optional="true"/>
+
+        <field name="tenantId"><hidden/></field>
+        <field name="domainName"><text size="40" maxlength="255"/></field>
+
+        <field name="submitButton" title="${uiLabelMap.CommonSubmit}">
+            <submit button-type="button"/>
+        </field>
+    </form>
+
+    <!-- List Tenant Data Sources Form -->
+    <form name="ListTenantDataSources" type="list" list-name="tenantDataSources" paginate-target="EditTenant" default-entity-name="TenantDataSource">
+        <actions>
+            <entity-condition entity-name="TenantDataSource" list="tenantDataSources">
+                <condition-expr field-name="tenantId" from-field="parameters.tenantId"/>
+            </entity-condition>
+        </actions>
+        <field name="tenantId"><hidden/></field>
+        <field name="entityGroupName"><display/></field>
+        <field name="jdbcUri"><display/></field>
+        <field name="jdbcUsername"><display/></field>
+        <field name="deleteLink" title=" " widget-style="buttontext">
+            <hyperlink description="${uiLabelMap.CommonDelete}" target="deleteTenantDataSource" also-hidden="false">
+                <parameter param-name="tenantId"/>
+                <parameter param-name="entityGroupName"/>
+            </hyperlink>
+        </field>
+    </form>
+
+    <!-- Create/Edit Tenant Data Source Form -->
+    <form name="EditTenantDataSourceForm" type="single" target="createTenantDataSource" default-entity-name="TenantDataSource">
+        <alt-target use-when="entityGroupName!=null" target="updateTenantDataSource"/>
+        <auto-fields-service service-name="createTenantDataSource"/>
+
+        <field name="tenantId"><hidden/></field>
+        <field name="entityGroupName"><text size="30" maxlength="60"/></field>
+        <field name="jdbcUri"><text size="60" maxlength="255"/></field>
+        <field name="jdbcUsername"><text size="30" maxlength="60"/></field>
+        <field name="jdbcPassword"><password size="30" maxlength="60"/></field>
+
+        <field name="submitButton" title="${uiLabelMap.CommonSubmit}">
+            <submit button-type="button"/>
+        </field>
+    </form>
 </forms>

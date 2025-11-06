@@ -57,8 +57,58 @@ under the License.
         <response name="error" type="view" value="EditTenant"/>
     </request-map>
 
+    <!-- Domain Name Request Mappings -->
+    <request-map uri="EditTenantDomain">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="EditTenantDomain"/>
+    </request-map>
+
+    <request-map uri="createTenantDomain">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createTenantDomainName"/>
+        <response name="success" type="view" value="EditTenant">
+            <redirect-parameter name="tenantId"/>
+        </response>
+        <response name="error" type="view" value="EditTenantDomain"/>
+    </request-map>
+
+    <request-map uri="deleteTenantDomain">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="deleteTenantDomainName"/>
+        <response name="success" type="view" value="EditTenant">
+            <redirect-parameter name="tenantId"/>
+        </response>
+        <response name="error" type="view" value="EditTenant"/>
+    </request-map>
+
+    <!-- Data Source Request Mappings -->
+    <request-map uri="EditTenantDataSource">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="EditTenantDataSource"/>
+    </request-map>
+
+    <request-map uri="createTenantDataSource">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createTenantDataSource"/>
+        <response name="success" type="view" value="EditTenant">
+            <redirect-parameter name="tenantId"/>
+        </response>
+        <response name="error" type="view" value="EditTenantDataSource"/>
+    </request-map>
+
+    <request-map uri="deleteTenantDataSource">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="deleteTenantDataSource"/>
+        <response name="success" type="view" value="EditTenant">
+            <redirect-parameter name="tenantId"/>
+        </response>
+        <response name="error" type="view" value="EditTenant"/>
+    </request-map>
+
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://MultTenant/widget/MultTenantScreens.xml#main"/>
     <view-map name="FindTenant" type="screen" page="component://MultTenant/widget/MultTenantScreens.xml#FindTenant"/>
     <view-map name="EditTenant" type="screen" page="component://MultTenant/widget/MultTenantScreens.xml#EditTenant"/>
+    <view-map name="EditTenantDomain" type="screen" page="component://MultTenant/widget/MultTenantScreens.xml#EditTenantDomain"/>
+    <view-map name="EditTenantDataSource" type="screen" page="component://MultTenant/widget/MultTenantScreens.xml#EditTenantDataSource"/>
 </site-conf>
