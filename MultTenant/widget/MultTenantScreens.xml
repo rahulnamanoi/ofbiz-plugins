@@ -69,6 +69,7 @@
             <widgets>
                 <decorator-screen name="MultTenantCommonDecorator" location="component://MultTenant/widget/CommonScreens.xml">
                     <decorator-section name="body">
+
                         <screenlet title="${uiLabelMap.PageTitleEditTenant}">
                             <include-form name="EditTenantForm" location="component://MultTenant/widget/MultTenantForms.xml"/>
                         </screenlet>
@@ -76,9 +77,7 @@
                         <!-- Domain Names Section -->
                         <screenlet title="${uiLabelMap.MultTenantDomainNames}">
                             <container style="button-bar">
-                                <link target="EditTenantDomain" text="${uiLabelMap.MultTenantAddDomain}" style="buttontext create">
-                                    <parameter param-name="tenantId"/>
-                                </link>
+                                <link target="EditTenantDomain?tenantId=${parameters.tenantId}"  text="${uiLabelMap.MultTenantAddDomain}" style="buttontext create"/>
                             </container>
                             <include-form name="ListTenantDomains" location="component://MultTenant/widget/MultTenantForms.xml"/>
                         </screenlet>
@@ -86,9 +85,7 @@
                         <!-- Data Sources Section -->
                         <screenlet title="${uiLabelMap.MultTenantDataSources}">
                             <container style="button-bar">
-                                <link target="EditTenantDataSource" text="${uiLabelMap.MultTenantAddDataSource}" style="buttontext create">
-                                    <parameter param-name="tenantId"/>
-                                </link>
+                                <link target="EditTenantDataSource?tenantId=${parameters.tenantId}" text="${uiLabelMap.MultTenantAddDataSource}" style="buttontext create"/>
                             </container>
                             <include-form name="ListTenantDataSources" location="component://MultTenant/widget/MultTenantForms.xml"/>
                         </screenlet>

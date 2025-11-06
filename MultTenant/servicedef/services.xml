@@ -51,42 +51,42 @@ under the License.
     </service>
 
     <!-- TenantDomainName Services -->
-    <service name="create#TenantDomainName" engine="entity-auto" invoke="create" default-entity-name="TenantDomainName" auth="true">
+    <service name="createTenantDomainName" engine="entity-auto" invoke="create" default-entity-name="TenantDomainName" auth="true">
         <description>Create a Tenant Domain Name</description>
         <permission-service service-name="tenantPermissionCheck" main-action="CREATE"/>
         <auto-attributes include="pk" mode="IN" optional="false"/>
         <auto-attributes include="nonpk" mode="IN" optional="true"/>
     </service>
 
-    <service name="update#TenantDomainName" engine="entity-auto" invoke="update" default-entity-name="TenantDomainName" auth="true">
+    <service name="updateTenantDomainName" engine="entity-auto" invoke="update" default-entity-name="TenantDomainName" auth="true">
         <description>Update a Tenant Domain Name</description>
         <permission-service service-name="tenantPermissionCheck" main-action="UPDATE"/>
         <auto-attributes include="pk" mode="IN" optional="false"/>
         <auto-attributes include="nonpk" mode="IN" optional="true"/>
     </service>
 
-    <service name="delete#TenantDomainName" engine="entity-auto" invoke="delete" default-entity-name="TenantDomainName" auth="true">
+    <service name="deleteTenantDomainName" engine="entity-auto" invoke="delete" default-entity-name="TenantDomainName" auth="true">
         <description>Delete a Tenant Domain Name</description>
         <permission-service service-name="tenantPermissionCheck" main-action="DELETE"/>
         <auto-attributes include="pk" mode="IN" optional="false"/>
     </service>
 
     <!-- TenantDataSource Services -->
-    <service name="create#TenantDataSource" engine="entity-auto" invoke="create" default-entity-name="TenantDataSource" auth="true">
+    <service name="createTenantDataSource" engine="entity-auto" invoke="create" default-entity-name="TenantDataSource" auth="true">
         <description>Create a Tenant Data Source</description>
         <permission-service service-name="tenantPermissionCheck" main-action="CREATE"/>
         <auto-attributes include="pk" mode="IN" optional="false"/>
         <auto-attributes include="nonpk" mode="IN" optional="true"/>
     </service>
 
-    <service name="update#TenantDataSource" engine="entity-auto" invoke="update" default-entity-name="TenantDataSource" auth="true">
+    <service name="updateTenantDataSource" engine="entity-auto" invoke="update" default-entity-name="TenantDataSource" auth="true">
         <description>Update a Tenant Data Source</description>
         <permission-service service-name="tenantPermissionCheck" main-action="UPDATE"/>
         <auto-attributes include="pk" mode="IN" optional="false"/>
         <auto-attributes include="nonpk" mode="IN" optional="true"/>
     </service>
 
-    <service name="delete#TenantDataSource" engine="entity-auto" invoke="delete" default-entity-name="TenantDataSource" auth="true">
+    <service name="deleteTenantDataSource" engine="entity-auto" invoke="delete" default-entity-name="TenantDataSource" auth="true">
         <description>Delete a Tenant Data Source</description>
         <permission-service service-name="tenantPermissionCheck" main-action="DELETE"/>
         <auto-attributes include="pk" mode="IN" optional="false"/>
