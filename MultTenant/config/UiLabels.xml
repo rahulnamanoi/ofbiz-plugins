@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
+    <property key="MultTenantApplication">
+        <value xml:lang="en">Multi-Tenant Management</value>
+    </property>
+    <property key="MultTenantCreateTenant">
+        <value xml:lang="en">Create New Tenant</value>
+    </property>
+    <property key="MultTenantEditTenant">
+        <value xml:lang="en">Edit Tenant</value>
+    </property>
+    <property key="MultTenantFindTenant">
+        <value xml:lang="en">Find Tenant</value>
+    </property>
+    <property key="PageTitleFindTenant">
+        <value xml:lang="en">Find Tenant</value>
+    </property>
+    <property key="PageTitleListTenant">
+        <value xml:lang="en">List Tenants</value>
+    </property>
+    <property key="PageTitleEditTenant">
+        <value xml:lang="en">Edit Tenant</value>
+    </property>
+</resource>
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simple-methods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/simple-methods.xsd">
+
+    <simple-method method-name="tenantPermissionCheck" short-description="Multi-Tenant Permission Logic">
+        <if>
+            <condition>
+                <if-has-permission permission="MULTTENANT" action="_${parameters.mainAction}"/>
+            </condition>
+            <then>
+                <field-to-result field="true" result-name="hasPermission"/>
+                <return/>
+            </then>
+            <else>
+                <field-to-result field="false" result-name="hasPermission"/>
+                <return/>
+            </else>
+        </if>
+    </simple-method>
+
+</simple-methods>
+
