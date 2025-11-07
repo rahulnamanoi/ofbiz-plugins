@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/services.xsd">
+    <description>MultiTenant Database Services</description>
+    <service name="executeDbCreationScript" engine="java"
+             location="org.apache.ofbiz.multitenant.service.DatabaseService" invoke="executeDbCreationScript" auth="true">
+        <description>Execute Database Creation Script</description>
+        <attribute name="dbName" type="String" mode="IN" optional="false"/>
+        <attribute name="dbUser" type="String" mode="IN" optional="true" default-value="postgres"/>
+        <attribute name="dbHost" type="String" mode="IN" optional="true" default-value="localhost"/>
+        <attribute name="dbPort" type="String" mode="IN" optional="true" default-value="5432"/>
+        <attribute name="result" type="String" mode="OUT" optional="true"/>
+        <attribute name="errorMessage" type="String" mode="OUT" optional="true"/>
+    </service>
+</services>
+
