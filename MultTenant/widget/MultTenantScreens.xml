@@ -50,9 +50,37 @@
                 <screenlet title="${uiLabelMap.PageTitleFindTenant}">
                     <include-form name="FindTenantForm" location="component://MultTenant/widget/MultTenantForms.xml"/>
                 </screenlet>
+
+                <!-- ✅ NEW: Create Tenant Button -->
+                <screenlet title="${uiLabelMap.PageTitleCreateTenant}">
+                    <container style="button-bar">
+                        <link target="EditTenant" text="${uiLabelMap.MultTenantCreateTenant}" style="buttontext create"/>
+                    </container>
+                </screenlet>
+
                 <screenlet title="${uiLabelMap.PageTitleListTenant}">
                     <include-form name="ListTenants" location="component://MultTenant/widget/MultTenantForms.xml"/>
                 </screenlet>
+            </widgets>
+        </section>
+    </screen>
+
+    <!-- ✅ NEW: Create Tenant Screen -->
+    <screen name="CreateTenant">
+        <section>
+            <actions>
+                <set field="titleProperty" value="Create Tenant"/>
+                <set field="headerItem" value="CreateTenant"/>
+                <set field="tabButtonItem" value="CreateTenant"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="MultTenantCommonDecorator" location="component://MultTenant/widget/CommonScreens.xml">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap.PageTitleCreateTenant}">
+                            <include-form name="CreateTenantForm" location="component://MultTenant/widget/MultTenantForms.xml"/>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
             </widgets>
         </section>
     </screen>

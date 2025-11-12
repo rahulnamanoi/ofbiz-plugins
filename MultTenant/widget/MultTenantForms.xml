@@ -46,12 +46,20 @@ under the License.
         <field name="initialPath"><text size="60" maxlength="255"/></field>
 
         <field name="disabled">
-            <drop-down allow-empty="false" no-current-selected-key="N">
+            <drop-down no-current-selected-key="N">
                 <option key="N" description="${uiLabelMap.CommonN}"/>
                 <option key="Y" description="${uiLabelMap.CommonY}"/>
             </drop-down>
         </field>
 
+        <!-- Database Status Section -->
+        <field name="databaseStatus" use-when="parameters.tenantId!=null">
+            <display description="Database Status: "/>
+        </field>
+
+        <field name="submitButton" title="${uiLabelMap.CommonSubmit}">
+            <submit button-type="button"/>
+        </field>
         <field name="submitButton" title="${uiLabelMap.CommonSubmit}">
             <submit button-type="button"/>
         </field>

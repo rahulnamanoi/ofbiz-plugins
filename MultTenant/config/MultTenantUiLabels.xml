@@ -36,5 +36,11 @@
     <property key="MultTenantAddDataSource">
         <value xml:lang="en">Add Data Source</value>
     </property>
+    <property key="PageTitleCreateTenant">
+        <value xml:lang="en">Add New Tenant</value>
+    </property>
+    <property key="MultTenantCreateTenant">
+        <value xml:lang="en">Add New</value>
+    </property>
 </resource>
 
