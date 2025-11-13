@@ -24,5 +24,19 @@ under the License.
 
     <description>Extended Catalog Manager Controller Configuration File</description>
 
+    <request-map uri="createUser">
+        <security auth="false"/>
+        <response name="success" type="view" value="CreateUserForm"/>
+    </request-map>
+
+    <request-map uri="createUserSubmit" method="post">
+        <security auth="false"/>
+        <event type="service" invoke="createUserAccount"/>
+        <response name="success" type="view" value="CreateUserSuccess"/>
+        <response name="error" type="view" value="CreateUserForm"/>
+    </request-map>
+
     <view-map name="EditExample" type="screen" page="component://exampleext/widget/example/ExampleScreens.xml#EditExampleExt"/>
+    <view-map name="CreateUserForm" type="screen" page="component://exampleext/widget/user-screens.xml#CreateUserForm"/>
+    <view-map name="CreateUserSuccess" type="screen" page="component://exampleext/widget/user-screens.xml#CreateUserSuccess"/>
 </site-conf>

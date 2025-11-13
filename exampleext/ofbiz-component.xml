@@ -31,4 +31,6 @@ under the License.
         location="webapp/exampleext"
         base-permission="OFBTOOLS,EXAMPLE"
         mount-point="/exampleext"/>
+
+    <service-resource type="model" location="servicedef/user-services.xml"/>
 </ofbiz-component>
