@@ -902,41 +902,156 @@ ${variantInfoJavaScript!}
 
     <#-- Any attributes/etc may go here -->
 
-    <#-- Product Reviews -->
+    <#-- Product Reviews and Feedback -->
   <hr>
-  <div id="reviews">
-    <h4>${uiLabelMap.OrderCustomerReviews}:</h4>
-    <#if averageRating?? && (averageRating &gt; 0) && numRatings?? && (numRatings &gt; 1)>
-      <div>${uiLabelMap.OrderAverageRating}: ${averageRating} <#if numRatings??>
-        (${uiLabelMap.CommonFrom} ${numRatings} ${uiLabelMap.OrderRatings})</#if></div>
-    </#if>
-    <#if productReviews?has_content>
-      <#list productReviews as productReview>
-        <#assign postedUserLogin = productReview.getRelatedOne("UserLogin", false) />
-        <#assign postedPerson = postedUserLogin.getRelatedOne("Person", false)! />
-        <div>
-          <strong>${uiLabelMap.CommonBy} : </strong>
-          <#if "Y" == productReview.postedAnonymous?default("N")>
-            ${uiLabelMap.OrderAnonymous}
-          <#else>
-            ${postedPerson.firstName} ${postedPerson.lastName}&nbsp;
-          </#if>
-        </div>
-        <div><strong>${uiLabelMap.CommonAt}: </strong>${productReview.postedDateTime!}&nbsp;</div>
-        <div><strong>${uiLabelMap.OrderRanking}: </strong>${productReview.productRating!?string}</div>
-        <div>&nbsp;</div>
-        <div>${productReview.productReview!}</div>
-        <hr/>
-      </#list>
-      <div>
-        <a href="<@ofbizUrl>reviewProduct?category_id=${categoryId!}&amp;product_id=${product.productId}</@ofbizUrl>"
-           class="linktext">${uiLabelMap.ProductReviewThisProduct}!</a>
+  <div id="product-detail-tabs" class="product-detail-tabs">
+    <ul class="product-detail-tab-list">
+      <li><a href="#" class="product-detail-tab-link active" data-target="#reviews">${uiLabelMap.OrderCustomerReviews}</a></li>
+      <li><a href="#" class="product-detail-tab-link" data-target="#product-feedback-tab">${uiLabelMap.CustomerFeedbackTab}</a></li>
+    </ul>
+    <div class="product-detail-tab-content">
+      <div id="reviews" class="product-detail-tab-pane active">
+        <h4>${uiLabelMap.OrderCustomerReviews}:</h4>
+        <#if averageRating?? && (averageRating &gt; 0) && numRatings?? && (numRatings &gt; 1)>
+          <div>${uiLabelMap.OrderAverageRating}: ${averageRating} <#if numRatings??>
+            (${uiLabelMap.CommonFrom} ${numRatings} ${uiLabelMap.OrderRatings})</#if></div>
+        </#if>
+        <#if productReviews?has_content>
+          <#list productReviews as productReview>
+            <#assign postedUserLogin = productReview.getRelatedOne("UserLogin", false) />
+            <#assign postedPerson = postedUserLogin.getRelatedOne("Person", false)! />
+            <div>
+              <strong>${uiLabelMap.CommonBy} : </strong>
+              <#if "Y" == productReview.postedAnonymous?default("N")>
+                ${uiLabelMap.OrderAnonymous}
+              <#else>
+                ${postedPerson.firstName} ${postedPerson.lastName}&nbsp;
+              </#if>
+            </div>
+            <div><strong>${uiLabelMap.CommonAt}: </strong>${productReview.postedDateTime!}&nbsp;</div>
+            <div><strong>${uiLabelMap.OrderRanking}: </strong>${productReview.productRating!?string}</div>
+            <div>&nbsp;</div>
+            <div>${productReview.productReview!}</div>
+            <hr/>
+          </#list>
+          <div>
+            <a href="<@ofbizUrl>reviewProduct?category_id=${categoryId!}&amp;product_id=${product.productId}</@ofbizUrl>"
+               class="linktext">${uiLabelMap.ProductReviewThisProduct}!</a>
+          </div>
+        <#else>
+          <p>${uiLabelMap.ProductProductNotReviewedYet}. <a href="<@ofbizUrl>reviewProduct?category_id=${categoryId!}&amp;product_id=${product.productId}</@ofbizUrl>" class="linktext">${uiLabelMap.ProductBeTheFirstToReviewThisProduct}</a>
+          </p>
+        </#if>
       </div>
-    <#else>
-      <p>${uiLabelMap.ProductProductNotReviewedYet}. <a href="<@ofbizUrl>reviewProduct?category_id=${categoryId!}&amp;product_id=${product.productId}</@ofbizUrl>" class="linktext">${uiLabelMap.ProductBeTheFirstToReviewThisProduct}</a>
-      </p>
-    </#if>
+      <div id="product-feedback-tab" class="product-detail-tab-pane">
+        <h4>${uiLabelMap.CustomerFeedbackTab}</h4>
+        <#if productFeedbackList?has_content>
+          <table class="product-feedback-table">
+            <thead>
+              <tr>
+                <th>${uiLabelMap.CustomerFeedbackTableCustomer}</th>
+                <th>${uiLabelMap.CustomerFeedbackTableRating}</th>
+                <th>${uiLabelMap.CustomerFeedbackTableComments}</th>
+                <th>${uiLabelMap.CustomerFeedbackTableCreated}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <#list productFeedbackList as feedback>
+                <tr>
+                  <td>${feedback.customerId!}</td>
+                  <td>${feedback.rating?string["0.##"]!}</td>
+                  <td>${feedback.comments!}</td>
+                  <td><#if feedback.createdDate??>${feedback.createdDate?string["yyyy-MM-dd HH:mm"]}</#if></td>
+                </tr>
+              </#list>
+            </tbody>
+          </table>
+        <#else>
+          <p>${uiLabelMap.CustomerFeedbackEmpty}</p>
+        </#if>
+      </div>
+    </div>
   </div>
+  <style type="text/css">
+    .product-detail-tabs {
+      margin-top: 2rem;
+    }
+    .product-detail-tab-list {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      border-bottom: 1px solid #ddd;
+    }
+    .product-detail-tab-list li {
+      margin-right: 1rem;
+    }
+    .product-detail-tab-link {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border: 1px solid transparent;
+      border-bottom: none;
+      text-decoration: none;
+      color: inherit;
+    }
+    .product-detail-tab-link.active {
+      border-color: #ddd #ddd #fff;
+      background-color: #fff;
+      font-weight: bold;
+    }
+    .product-detail-tab-pane {
+      display: none;
+      padding: 1rem 0;
+    }
+    .product-detail-tab-pane.active {
+      display: block;
+    }
+    .product-feedback-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .product-feedback-table th,
+    .product-feedback-table td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    .product-feedback-table th {
+      background-color: #f7f7f7;
+    }
+  </style>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+      var container = document.getElementById('product-detail-tabs');
+      if (!container) {
+        return;
+      }
+      var links = container.querySelectorAll('.product-detail-tab-link');
+      var panes = container.querySelectorAll('.product-detail-tab-pane');
+      var activate = function (link, pane) {
+        for (var i = 0; i < links.length; i++) {
+          links[i].classList.remove('active');
+        }
+        for (var j = 0; j < panes.length; j++) {
+          panes[j].classList.remove('active');
+        }
+        if (link) {
+          link.classList.add('active');
+        }
+        if (pane) {
+          pane.classList.add('active');
+        }
+      };
+      for (var k = 0; k < links.length; k++) {
+        links[k].addEventListener('click', function (event) {
+          event.preventDefault();
+          var targetSelector = this.getAttribute('data-target');
+          var pane = container.querySelector(targetSelector);
+          activate(this, pane);
+        });
+      }
+    });
+  </script>
     <#-- Upgrades/Up-Sell/Cross-Sell -->
     <#macro associated assocProducts beforeName showName afterName formNamePrefix targetRequestName>
       <#local pageProduct = product />

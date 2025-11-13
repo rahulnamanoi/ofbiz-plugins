@@ -294,8 +294,10 @@ under the License.
         <section>
             <actions>
                 <set field="productsummaryScreen" value="component://ecommerce/widget/CatalogScreens.xml#productsummary"/>
+                <property-map resource="CustomerFeedbackUiLabels" map-name="uiLabelMap" global="true"/>
 
                 <script location="component://order/src/main/groovy/org/apache/ofbiz/order/entry/catalog/ProductDetail.groovy"/>
+                <script location="component://customerfeedback/src/main/groovy/org/apache/ofbiz/customerfeedback/LoadProductFeedback.groovy"/>
             </actions>
             <widgets>
                 <include-screen name="breadcrumbs"/>
