@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<entity-engine-xml>
+
+    <!-- Asset maintenance permissions -->
+    <SecurityPermission permissionId="ASSETMAINT_ADMIN" description="ALL operations in Asset Maintenance."/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="SUPER" permissionId="ASSETMAINT_ADMIN"/>
+
+    <!-- Business seed security groups -->
+    <SecurityGroup groupId="BUSINESS_ADMIN" description="All business modules including order and asset maintenance." groupName="Business Admin"/>
+    <SecurityGroup groupId="PRODUCTION_MANAGER" description="Product manager with catalog, facility, manufacturing, asset maintenance, and party access." groupName="Product Manager"/>
+    <SecurityGroup groupId="PROCUREMENT_MANAGER" description="Procurement manager with party, facility, order, and catalog access." groupName="Procurement Manager"/>
+    <SecurityGroup groupId="CATALOG_MANAGER" description="Catalog manager with catalog and party access." groupName="Catalog Manager"/>
+
+    <!-- Business seed security group permissions -->
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="BUSINESS_ADMIN" permissionId="PARTYMGR_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="BUSINESS_ADMIN" permissionId="FACILITY_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="BUSINESS_ADMIN" permissionId="ORDERMGR_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="BUSINESS_ADMIN" permissionId="CATALOG_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="BUSINESS_ADMIN" permissionId="MANUFACTURING_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="BUSINESS_ADMIN" permissionId="ASSETMAINT_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="BUSINESS_ADMIN" permissionId="OFBTOOLS_VIEW"/>
+
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="PRODUCTION_MANAGER" permissionId="PARTYMGR_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="PRODUCTION_MANAGER" permissionId="FACILITY_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="PRODUCTION_MANAGER" permissionId="CATALOG_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="PRODUCTION_MANAGER" permissionId="MANUFACTURING_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="PRODUCTION_MANAGER" permissionId="ASSETMAINT_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="PRODUCTION_MANAGER" permissionId="OFBTOOLS_VIEW"/>
+
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="PROCUREMENT_MANAGER" permissionId="PARTYMGR_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="PROCUREMENT_MANAGER" permissionId="FACILITY_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="PROCUREMENT_MANAGER" permissionId="ORDERMGR_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="PROCUREMENT_MANAGER" permissionId="CATALOG_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="PROCUREMENT_MANAGER" permissionId="OFBTOOLS_VIEW"/>
+
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="CATALOG_MANAGER" permissionId="PARTYMGR_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="CATALOG_MANAGER" permissionId="CATALOG_ADMIN"/>
+    <SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="CATALOG_MANAGER" permissionId="OFBTOOLS_VIEW"/>
+
+</entity-engine-xml>

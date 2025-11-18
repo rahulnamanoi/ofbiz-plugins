@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <!-- Role-based seed users -->
+    <Party partyId="BUSINESS_ADMIN" partyTypeId="PERSON" statusId="PARTY_ENABLED"/>
+    <Person partyId="BUSINESS_ADMIN" firstName="Business" lastName="Admin"/>
+    <PartyStatus partyId="BUSINESS_ADMIN" statusId="PARTY_ENABLED" statusDate="2001-01-01 12:00:00.0"/>
+    <UserLogin userLoginId="businessAdmin" partyId="BUSINESS_ADMIN" currentPassword="{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a" enabled="Y"/>
+    <UserLoginSecurityGroup groupId="BUSINESS_ADMIN" userLoginId="businessAdmin" fromDate="2001-01-01 12:00:00.0"/>
+
+    <Party partyId="PRODUCTION_MANAGER" partyTypeId="PERSON" statusId="PARTY_ENABLED"/>
+    <Person partyId="PRODUCTION_MANAGER" firstName="Product" lastName="Manager"/>
+    <PartyStatus partyId="PRODUCTION_MANAGER" statusId="PARTY_ENABLED" statusDate="2001-01-01 12:00:00.0"/>
+    <UserLogin userLoginId="productionManager" partyId="PRODUCTION_MANAGER" currentPassword="{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a" enabled="Y"/>
+    <UserLoginSecurityGroup groupId="PRODUCTION_MANAGER" userLoginId="productionManager" fromDate="2001-01-01 12:00:00.0"/>
+
+    <Party partyId="PROCUREMENT_MANAGER" partyTypeId="PERSON" statusId="PARTY_ENABLED"/>
+    <Person partyId="PROCUREMENT_MANAGER" firstName="Procurement" lastName="Manager"/>
+    <PartyStatus partyId="PROCUREMENT_MANAGER" statusId="PARTY_ENABLED" statusDate="2001-01-01 12:00:00.0"/>
+    <UserLogin userLoginId="procurementManager" partyId="PROCUREMENT_MANAGER" currentPassword="{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a" enabled="Y"/>
+    <UserLoginSecurityGroup groupId="PROCUREMENT_MANAGER" userLoginId="procurementManager" fromDate="2001-01-01 12:00:00.0"/>
+
+    <Party partyId="CATALOG_MANAGER" partyTypeId="PERSON" statusId="PARTY_ENABLED"/>
+    <Person partyId="CATALOG_MANAGER" firstName="Catalog" lastName="Manager"/>
+    <PartyStatus partyId="CATALOG_MANAGER" statusId="PARTY_ENABLED" statusDate="2001-01-01 12:00:00.0"/>
+    <UserLogin userLoginId="catalogManager" partyId="CATALOG_MANAGER" currentPassword="{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a" enabled="Y"/>
+    <UserLoginSecurityGroup groupId="CATALOG_MANAGER" userLoginId="catalogManager" fromDate="2001-01-01 12:00:00.0"/>
+
+</entity-engine-xml>

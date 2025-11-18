@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+	<!-- ============================================ -->
+	<!-- LeatherLux Organization Party Setup -->
+	<!-- ============================================ -->
+	<!-- Main Organization Party -->
+	<Party partyId="LEATHERLUX_ORG" preferredCurrencyUomId="INR" partyTypeId="PARTY_GROUP" statusId="PARTY_ENABLED"/>
+    <PartyGroup partyId="LEATHERLUX_ORG" groupName="LeatherLux Pvt. Ltd."/>
+    <PartyRole partyId="LEATHERLUX_ORG" roleTypeId="BILL_FROM_VENDOR"/>
+	<PartyRole partyId="LEATHERLUX_ORG" roleTypeId="BILL_TO_CUSTOMER"/>
+	<PartyRole partyId="LEATHERLUX_ORG" roleTypeId="INTERNAL_ORGANIZATIO"/>
+	<PartyRole partyId="LEATHERLUX_ORG" roleTypeId="_NA_"/>
+	<PartyStatus partyId="LEATHERLUX_ORG" statusId="PARTY_ENABLED" statusDate="2024-01-01 12:00:00.0"/>
+	<!-- Contact Mechanism for Organization - Postal Address -->
+	<!-- Located in Chennai, Tamil Nadu -->
+	<ContactMech contactMechId="LLC_ADDR_01" contactMechTypeId="POSTAL_ADDRESS"/>
+	<PartyContactMech partyId="LEATHERLUX_ORG" contactMechId="LLC_ADDR_01" fromDate="2024-01-01 00:00:00.000" allowSolicitation="Y"/>
+	<PostalAddress contactMechId="LLC_ADDR_01" toName="LeatherLux Pvt. Ltd." address1="4th Floor Boot club Road" address2="Kothari Building" city="Chennai" postalCode="600028" countryGeoId="IND" stateProvinceGeoId="IN-TN"/>
+	<PartyContactMechPurpose contactMechPurposeTypeId="BILLING_LOCATION" partyId="LEATHERLUX_ORG" contactMechId="LLC_ADDR_01" fromDate="2024-01-01 00:00:00.000"/>
+	<PartyContactMechPurpose contactMechPurposeTypeId="GENERAL_LOCATION" partyId="LEATHERLUX_ORG" contactMechId="LLC_ADDR_01" fromDate="2024-01-01 00:00:00.000"/>
+	<PartyContactMechPurpose contactMechPurposeTypeId="PAYMENT_LOCATION" partyId="LEATHERLUX_ORG" contactMechId="LLC_ADDR_01" fromDate="2024-01-01 00:00:00.000"/>
+	<!-- Contact Mechanism for Organization - Email Address -->
+	<ContactMech contactMechId="LLC_EMAIL_01" contactMechTypeId="EMAIL_ADDRESS" infoString="info@leatherlux.com"/>
+	<PartyContactMech partyId="LEATHERLUX_ORG" contactMechId="LLC_EMAIL_01" fromDate="2024-01-01 00:00:00.000" allowSolicitation="Y"/>
+	<PartyContactMechPurpose contactMechPurposeTypeId="PRIMARY_EMAIL" partyId="LEATHERLUX_ORG" contactMechId="LLC_EMAIL_01" fromDate="2024-01-01 00:00:00.000"/>
+	<!-- Contact Mechanism for Organization - Phone Number -->
+	<ContactMech contactMechId="LLC_PHONE_01" contactMechTypeId="TELECOM_NUMBER"/>
+	<TelecomNumber contactMechId="LLC_PHONE_01" countryCode="91" areaCode="44" contactNumber="22123456"/>
+	<PartyContactMech partyId="LEATHERLUX_ORG" contactMechId="LLC_PHONE_01" fromDate="2024-01-01 00:00:00.000" allowSolicitation="Y"/>
+	<PartyContactMechPurpose contactMechPurposeTypeId="PRIMARY_PHONE" partyId="LEATHERLUX_ORG" contactMechId="LLC_PHONE_01" fromDate="2024-01-01 00:00:00.000"/>
+	<!-- ============================================ -->
+	<!-- John Tanneries Supplier Party Setup -->
+	<!-- ============================================ -->
+	<!-- Supplier Party -->
+	<Party partyId="JOHN_SUPPLIER" partyTypeId="PARTY_GROUP" preferredCurrencyUomId="INR" statusId="PARTY_ENABLED"/>
+	<PartyGroup partyId="JOHN_SUPPLIER" groupName="John Tanneries Supplies"/>
+	<PartyRole partyId="JOHN_SUPPLIER" roleTypeId="SUPPLIER"/>
+	<PartyRole partyId="JOHN_SUPPLIER" roleTypeId="BILL_FROM_VENDOR"/>
+	<PartyRole partyId="JOHN_SUPPLIER" roleTypeId="_NA_"/>
+	<PartyStatus partyId="JOHN_SUPPLIER" statusId="PARTY_ENABLED" statusDate="2024-01-01 12:00:00.0"/>
+	<!-- Contact Mechanism for Supplier - Postal Address -->
+	<!-- Located in Pune, Maharashtra -->
+	<ContactMech contactMechId="JTS_ADDR_01" contactMechTypeId="POSTAL_ADDRESS"/>
+	<PartyContactMech partyId="JOHN_SUPPLIER" contactMechId="JTS_ADDR_01" fromDate="2024-01-01 00:00:00.000" allowSolicitation="N"/>
+	<PostalAddress contactMechId="JTS_ADDR_01" toName="John Tanneries Supplies" address1="112 2nd Floor" address2="Sterling Plaza Deccan Gymkhana" city="Pune" postalCode="411001" countryGeoId="IND" stateProvinceGeoId="IN-MH"/>
+	<PartyContactMechPurpose contactMechPurposeTypeId="BILLING_LOCATION" partyId="JOHN_SUPPLIER" contactMechId="JTS_ADDR_01" fromDate="2024-01-01 00:00:00.000"/>
+	<PartyContactMechPurpose contactMechPurposeTypeId="PAYMENT_LOCATION" partyId="JOHN_SUPPLIER" contactMechId="JTS_ADDR_01" fromDate="2024-01-01 00:00:00.000"/>
+	<!-- Contact Mechanism for Supplier - Email Address -->
+	<ContactMech contactMechId="JTS_EMAIL_01" contactMechTypeId="EMAIL_ADDRESS" infoString="support@johntanneries.com"/>
+	<PartyContactMech partyId="JOHN_SUPPLIER" contactMechId="JTS_EMAIL_01" fromDate="2024-01-01 00:00:00.000" allowSolicitation="N"/>
+	<PartyContactMechPurpose contactMechPurposeTypeId="PRIMARY_EMAIL" partyId="JOHN_SUPPLIER" contactMechId="JTS_EMAIL_01" fromDate="2024-01-01 00:00:00.000"/>
+	<!-- Contact Mechanism for Supplier - Phone Number -->
+	<ContactMech contactMechId="JTS_PHONE_01" contactMechTypeId="TELECOM_NUMBER"/>
+	<TelecomNumber contactMechId="JTS_PHONE_01" countryCode="91" areaCode="20" contactNumber="25987654"/>
+	<PartyContactMech partyId="JOHN_SUPPLIER" contactMechId="JTS_PHONE_01" fromDate="2024-01-01 00:00:00.000" allowSolicitation="N"/>
+	<PartyContactMechPurpose contactMechPurposeTypeId="PRIMARY_PHONE" partyId="JOHN_SUPPLIER" contactMechId="JTS_PHONE_01" fromDate="2024-01-01 00:00:00.000"/>
+!-- Customer Party - Person -->
+    <Party partyId="GRH_CX" partyTypeId="PERSON"  preferredCurrencyUomId="INR" statusId="PARTY_ENABLED"/>
+    <Person partyId="GRH_CX" firstName="Global" lastName="Retail Hub"/>
+    <PartyRole partyId="GRH_CX" roleTypeId="CUSTOMER"/>
+    <PartyRole partyId="GRH_CX" roleTypeId="BILL_TO_CUSTOMER"/>
+    <PartyRole partyId="GRH_CX" roleTypeId="_NA_"/>
+    <PartyStatus partyId="GRH_CX" statusId="PARTY_ENABLED" statusDate="2024-01-01 12:00:00.0"/>
+    <!-- Contact Mechanism for Customer - Postal Address -->
+    <!-- Located in Bangalore, Karnataka -->
+    <ContactMech contactMechId="GRH_ADDR_01" contactMechTypeId="POSTAL_ADDRESS"/>
+    <PartyContactMech partyId="GRH_CX" contactMechId="GRH_ADDR_01" fromDate="2024-01-01 00:00:00.000" allowSolicitation="Y"/>
+    <PostalAddress contactMechId="GRH_ADDR_01" toName="Global Retail Hub" address1="Room1, Zonson Market" city="Bangalore" postalCode="560025" countryGeoId="IND" stateProvinceGeoId="IN-KA"/>
+    <PartyContactMechPurpose contactMechPurposeTypeId="BILLING_LOCATION" partyId="GRH_CX" contactMechId="GRH_ADDR_01" fromDate="2024-01-01 00:00:00.000"/>
+    <PartyContactMechPurpose contactMechPurposeTypeId="SHIPPING_LOCATION" partyId="GRH_CX" contactMechId="GRH_ADDR_01" fromDate="2024-01-01 00:00:00.000"/>
+    <PartyContactMechPurpose contactMechPurposeTypeId="GENERAL_LOCATION" partyId="GRH_CX" contactMechId="GRH_ADDR_01" fromDate="2024-01-01 00:00:00.000"/>
+    <!-- Contact Mechanism for Customer - Email Address -->
+    <ContactMech contactMechId="GRH_EMAIL_01" contactMechTypeId="EMAIL_ADDRESS" infoString="sales@globalretailhub.com"/>
+    <PartyContactMech partyId="GRH_CX" contactMechId="GRH_EMAIL_01" fromDate="2024-01-01 00:00:00.000" allowSolicitation="Y"/>
+    <PartyContactMechPurpose contactMechPurposeTypeId="PRIMARY_EMAIL" partyId="GRH_CX" contactMechId="GRH_EMAIL_01" fromDate="2024-01-01 00:00:00.000"/>
+    <!-- Contact Mechanism for Customer - Phone Number -->
+    <ContactMech contactMechId="GRH_PHONE_01" contactMechTypeId="TELECOM_NUMBER"/>
+    <TelecomNumber contactMechId="GRH_PHONE_01" countryCode="91" areaCode="80" contactNumber="40123456"/>
+    <PartyContactMech partyId="GRH_CX" contactMechId="GRH_PHONE_01" fromDate="2024-01-01 00:00:00.000" allowSolicitation="Y"/>
+    <PartyContactMechPurpose contactMechPurposeTypeId="PRIMARY_PHONE" partyId="GRH_CX" contactMechId="GRH_PHONE_01" fromDate="2024-01-01 00:00:00.000"/>
+
+
+    <!-- ============================================ -->
+    <!-- LeatherLux Production Plant Facility Setup -->
+    <!-- ============================================ -->
+    <!-- Main Production Plant Facility -->
+    <Facility facilityId="LLX_MAIN_PLANT"
+              ownerPartyId="LEATHERLUX_ORG"
+              facilityTypeId="WAREHOUSE"
+              facilityName="LeatherLux Production Plant"
+              description="Main factory where bags and wallets are produced"
+              defaultInventoryItemTypeId="NON_SERIAL_INV_ITEM"/>
+    <!-- Facility Contact Mechanism - Postal Address -->
+    <ContactMech contactMechId="LLX_ADDR_01" contactMechTypeId="POSTAL_ADDRESS"/>
+    <PostalAddress contactMechId="LLX_ADDR_01"
+                   toName="LeatherLux Production Plant"
+                   address1="123 Industrial Park Road"
+                   city="Chennai"
+                   postalCode="600028"
+                   countryGeoId="IND"
+                   stateProvinceGeoId="IN-TN"/>
+    <FacilityContactMech facilityId="LLX_MAIN_PLANT" contactMechId="LLX_ADDR_01" fromDate="2024-01-01 00:00:00.0"/>
+    <FacilityContactMechPurpose facilityId="LLX_MAIN_PLANT" contactMechId="LLX_ADDR_01" contactMechPurposeTypeId="GENERAL_LOCATION" fromDate="2024-01-01 00:00:00.0"/>
+    <FacilityContactMechPurpose facilityId="LLX_MAIN_PLANT" contactMechId="LLX_ADDR_01" contactMechPurposeTypeId="BILLING_LOCATION" fromDate="2024-01-01 00:00:00.0"/>
+    <FacilityContactMechPurpose facilityId="LLX_MAIN_PLANT" contactMechId="LLX_ADDR_01" contactMechPurposeTypeId="SHIP_ORIG_LOCATION" fromDate="2024-01-01 00:00:00.0"/>
+    <FacilityContactMechPurpose facilityId="LLX_MAIN_PLANT" contactMechId="LLX_ADDR_01" contactMechPurposeTypeId="SHIPPING_LOCATION" fromDate="2024-01-01 00:00:00.0"/>
+    <!-- Facility Contact Mechanism - Phone Number -->
+    <ContactMech contactMechId="LLX_PHONE_01" contactMechTypeId="TELECOM_NUMBER"/>
+    <TelecomNumber contactMechId="LLX_PHONE_01" countryCode="91" areaCode="44" contactNumber="28765432"/>
+    <FacilityContactMech facilityId="LLX_MAIN_PLANT" contactMechId="LLX_PHONE_01" fromDate="2024-01-01 00:00:00.0"/>
+    <FacilityContactMechPurpose facilityId="LLX_MAIN_PLANT" contactMechId="LLX_PHONE_01" contactMechPurposeTypeId="PHONE_SHIPPING" fromDate="2024-01-01 00:00:00.0"/>
+    <FacilityContactMechPurpose facilityId="LLX_MAIN_PLANT" contactMechId="LLX_PHONE_01" contactMechPurposeTypeId="PHONE_BILLING" fromDate="2024-01-01 00:00:00.0"/>
+    <!-- Facility Contact Mechanism - Email Address -->
+    <ContactMech contactMechId="LLX_EMAIL_FAC_01" contactMechTypeId="EMAIL_ADDRESS" infoString="plant@leatherlux.com"/>
+    <FacilityContactMech facilityId="LLX_MAIN_PLANT" contactMechId="LLX_EMAIL_FAC_01" fromDate="2024-01-01 00:00:00.0"/>
+    <!-- ============================================ -->
+    <!-- Facility Storage - Inventory Locations -->
+    <!-- ============================================ -->
+    <!-- Raw Materials Storage Area -->
+<FacilityLocation
+    facilityId="LLX_MAIN_PLANT"
+    locationSeqId="RMRMRMUL01"
+    locationTypeEnumId="FLT_BULK"
+    areaId="RM"
+    aisleId="RM"
+    sectionId="RM"
+    levelId="UL"
+    positionId="05"
+    description="Raw Materials Storage Area"
+/>
+<FacilityLocation
+    facilityId="LLX_MAIN_PLANT"
+    locationSeqId="FGFGFGUL01"
+    locationTypeEnumId="FLT_BULK"
+    areaId="FG"
+    aisleId="FG"
+    sectionId="FG"
+    levelId="UL"
+    positionId="05"
+    description="Finished Goods Storage Area"
+/>
+
+                         <!-- ========================================= -->
+    <!-- PRODUCT STORE SETUP -->
+    <!-- ========================================= -->
+    <!-- LeatherLux Product Store -->
+    <ProductStore productStoreId="LLX_STORE"
+                  storeName="LeatherLux Store"
+                  companyName="LeatherLux Pvt. Ltd."
+                  title="LeatherLux - Premium Leather Accessories"
+                  subtitle="Handcrafted Bags and Wallets"
+                  payToPartyId="LEATHERLUX_ORG"
+                  daysToCancelNonPay="30"
+                  prorateShipping="Y"
+                  prorateTaxes="Y"
+                  inventoryFacilityId="LLX_MAIN_PLANT"
+                  oneInventoryFacility="Y"
+                  checkInventory="Y"
+                  reserveInventory="Y"
+                  balanceResOnOrderCreation="Y"
+                  reserveOrderEnumId="INVRO_FIFO_REC"
+                  requireInventory="N"
+                  defaultLocaleString="en_US"
+                  defaultCurrencyUomId="INR"
+                  defaultSalesChannelEnumId="WEB_SALES_CHANNEL"
+                  allowPassword="Y"
+                  explodeOrderItems="N"
+                  retryFailedAuths="Y"
+                  reqReturnInventoryReceive="N"
+                  headerApprovedStatus="ORDER_APPROVED"
+                  itemApprovedStatus="ITEM_APPROVED"
+                  digitalItemApprovedStatus="ITEM_APPROVED"
+                  headerDeclinedStatus="ORDER_REJECTED"
+                  itemDeclinedStatus="ITEM_REJECTED"
+                  headerCancelStatus="ORDER_CANCELLED"
+                  itemCancelStatus="ITEM_CANCELLED"
+                  orderNumberPrefix="LLX"
+                  authDeclinedMessage="There has been a problem with your payment method. Please try a different method or contact customer service."
+                  authFraudMessage="Your order has been flagged for review. Please contact customer service."
+                  authErrorMessage="Problem connecting to payment processor; we will continue to retry and notify you by email."
+                  storeCreditValidDays="90"
+                  storeCreditAccountEnumId="FIN_ACCOUNT"
+                  visualThemeId="EC_DEFAULT"
+                  prodSearchExcludeVariants="Y"
+                  autoApproveInvoice="Y"
+                  shipIfCaptureFails="Y"
+                  autoApproveOrder="Y"
+                  showOutOfStockProducts="Y"/>
+    <!-- ========================================= -->
+    <!-- STORE FACILITY ASSOCIATION -->
+    <!-- ========================================= -->
+    <ProductStoreFacility productStoreId="LLX_STORE"
+                          facilityId="LLX_MAIN_PLANT"
+                          fromDate="2024-01-01 00:00:00.0"
+                          sequenceNum="1"/>
+    <!-- ========================================= -->
+    <!-- CATALOG SETUP -->
+    <!-- ========================================= -->
+    <!-- LeatherLux Product Catalog -->
+    <ProdCatalog prodCatalogId="LLX_CATALOG"
+                 catalogName="LeatherLux Product Catalog"
+                 useQuickAdd="Y"/>
+    <!-- Store Catalog Association -->
+    <ProductStoreCatalog productStoreId="LLX_STORE"
+                         prodCatalogId="LLX_CATALOG"
+                         fromDate="2024-01-01 00:00:00.0"
+                         sequenceNum="1"/>
+    <!-- ========================================= -->
+    <!-- CATEGORY HIERARCHY -->
+    <!-- ========================================= -->
+    <!-- Root Category: Leather Accessories -->
+    <ProductCategory categoryName="Leather Accessories"
+                     longDescription="Premium handcrafted leather accessories including bags and wallets"
+                     productCategoryId="CAT_LEATHER"
+                     productCategoryTypeId="CATALOG_CATEGORY"/>
+    <!-- Level 1: Women Collection -->
+    <ProductCategory categoryName="Women Collection"
+                     longDescription="Elegant leather accessories designed for women"
+                     primaryParentCategoryId="CAT_LEATHER"
+                     productCategoryId="CAT_WOMEN"
+                     productCategoryTypeId="CATALOG_CATEGORY"/>
+    <!-- Level 2: Women Sling Bags -->
+    <ProductCategory categoryName="Women Sling Bags"
+                     longDescription="Stylish and functional sling bags for women"
+                     primaryParentCategoryId="CAT_WOMEN"
+                     productCategoryId="CAT_WOMEN_SLING"
+                     productCategoryTypeId="CATALOG_CATEGORY"/>
+    <!-- ========================================= -->
+    <!-- 🟢 NEW CATEGORY: Men Collection -->
+    <!-- ========================================= -->
+    <ProductCategory categoryName="Men Collection"
+                     longDescription="Premium leather accessories designed for men"
+                     primaryParentCategoryId="CAT_LEATHER"
+                     productCategoryId="CAT_MEN"
+                     productCategoryTypeId="CATALOG_CATEGORY"/>
+    <!-- 🟢 NEW: Men Wallets Category -->
+    <ProductCategory categoryName="Men Wallets"
+                     longDescription="Premium leather wallets for men"
+                     primaryParentCategoryId="CAT_MEN"
+                     productCategoryId="CAT_MEN_WALLETS"
+                     productCategoryTypeId="CATALOG_CATEGORY"/>
+    <!-- ========================================= -->
+    <!-- CATALOG CATEGORY ASSOCIATIONS -->
+    <!-- ========================================= -->
+    <!-- Catalog Browse Root -->
+    <ProdCatalogCategory prodCatalogId="LLX_CATALOG"
+                         productCategoryId="CAT_LEATHER"
+                         fromDate="2024-01-01 00:00:00.0"
+                         sequenceNum="1"
+                         prodCatalogCategoryTypeId="PCCT_BROWSE_ROOT"/>
+    <!-- ========================================= -->
+    <!-- CATEGORY ROLLUPS (HIERARCHY) -->
+    <!-- ========================================= -->
+    <!-- Root to Women Collection -->
+    <ProductCategoryRollup fromDate="2024-01-01 00:00:00.0"
+                           parentProductCategoryId="CAT_LEATHER"
+                           productCategoryId="CAT_WOMEN"/>
+    <!-- Women Collection to Women Sling Bags -->
+    <ProductCategoryRollup fromDate="2024-01-01 00:00:00.0"
+                           parentProductCategoryId="CAT_WOMEN"
+                           productCategoryId="CAT_WOMEN_SLING"/>
+    <!-- 🟢 NEW: Root to Men Collection -->
+    <ProductCategoryRollup fromDate="2025-01-01 00:00:00.0"
+                           parentProductCategoryId="CAT_LEATHER"
+                           productCategoryId="CAT_MEN"/>
+    <!-- 🟢 NEW: Men Collection to Men Wallets -->
+    <ProductCategoryRollup fromDate="2025-01-01 00:00:00.0"
+                           parentProductCategoryId="CAT_MEN"
+                           productCategoryId="CAT_MEN_WALLETS"/>
+
+    <!-- =========================
+1) FINISHED PRODUCT
+========================= -->
+    <Product productId="PRD_WSLING_001"
+             productTypeId="FINISHED_GOOD"
+             internalName="Women Sling Bag - Classic Tan"
+             productName="Women Sling Bag - Classic Tan"
+             description="Medium-size leather sling bag with gold strap"
+             isVirtual="N" isVariant="N" taxable="Y"/>
+    <GoodIdentification productId="PRD_WSLING_001"
+                        goodIdentificationTypeId="SKU"
+                        idValue="PRD_WSLING_001"/>
+    <!-- Category membership -->
+    <ProductCategoryMember productId="PRD_WSLING_001"
+                           productCategoryId="CAT_WOMEN_SLING"
+                           fromDate="2025-01-01 00:00:00.000"/>
+
+    <!-- ========================================= -->
+    <!-- 🟢 NEW PRODUCT: Men's Wallet -->
+    <!-- ========================================= -->
+    <Product productId="PRD_LL_0002"
+             productTypeId="FINISHED_GOOD"
+             internalName="LeatherLux Men's Wallet"
+             productName="LeatherLux Men's Wallet"
+             description="Premium leather wallet with compartments for cards and cash"
+             isVirtual="N" isVariant="N" taxable="Y"/>
+    <GoodIdentification productId="PRD_LL_0002"
+                        goodIdentificationTypeId="SKU"
+                        idValue="PRD_LL_0002"/>
+    <!-- 🟢 Category membership for wallet -->
+    <ProductCategoryMember productId="PRD_LL_0002"
+                           productCategoryId="CAT_MEN_WALLETS"
+                           fromDate="2025-01-01 00:00:00.000"/>
+
+    <!-- =========================
+         2) RAW-MATERIAL PRODUCTS
+         ========================= -->
+    <Product productId="CMP_LEATHER_SHEET"
+             productTypeId="RAW_MATERIAL"
+             internalName="Leather Sheet"
+             productName="Leather Sheet"
+             description="Primary raw leather sheet"
+             isVirtual="N" isVariant="N" billOfMaterialLevel="1"/>
+    <Product productId="CMP_ZIPPER"
+             productTypeId="RAW_MATERIAL"
+             internalName="Zipper"
+             productName="Zipper"
+             description="Standard zipper for sling bags"
+             isVirtual="N" isVariant="N" billOfMaterialLevel="1"/>
+    <Product productId="CMP_THREAD"
+             productTypeId="RAW_MATERIAL"
+             internalName="Thread (Brown/Black)"
+             productName="Thread (Brown/Black)"
+             description="Thread for stitching"
+             isVirtual="N" isVariant="N" billOfMaterialLevel="1"/>
+    <Product productId="CMP_BUTTON"
+             productTypeId="RAW_MATERIAL"
+             internalName="Magnetic Button"
+             productName="Magnetic Button"
+             description="Magnetic button for bag closure"
+             isVirtual="N" isVariant="N" billOfMaterialLevel="1"/>
+
+    <!-- ========================================= -->
+    <!-- 🟢 NEW RAW MATERIALS for Wallet -->
+    <!-- ========================================= -->
+    <Product productId="CMP_INNER_LINING"
+             productTypeId="RAW_MATERIAL"
+             internalName="Inner Lining"
+             productName="Inner Lining"
+             description="Soft inner lining material for wallets"
+             isVirtual="N" isVariant="N" billOfMaterialLevel="1"/>
+    <Product productId="CMP_BUTTON_CLIP"
+             productTypeId="RAW_MATERIAL"
+             internalName="Button Clip"
+             productName="Button Clip"
+             description="Metal button clip for wallet closure"
+             isVirtual="N" isVariant="N" billOfMaterialLevel="1"/>
+
+    <!-- =========================
+         3) SUPPLIER PRODUCTS (RM only, MOQ=0, dated 2025-01-01)
+         ========================= -->
+    <SupplierProduct availableFromDate="2025-01-01 00:00:00.000"
+                     canDropShip="N"
+                     currencyUomId="INR"
+                     lastPrice="1500.00"
+                     minimumOrderQuantity="0.000000"
+                     partyId="JOHN_SUPPLIER"
+                     productId="CMP_LEATHER_SHEET"
+                     supplierPrefOrderId="10_MAIN_SUPPL"
+                     supplierProductId="LEAT-SHEET"
+                     supplierProductName="Leather Sheet"/>
+    <SupplierProduct availableFromDate="2025-01-01 00:00:00.000"
+                     canDropShip="N"
+                     currencyUomId="INR"
+                     lastPrice="25.00"
+                     minimumOrderQuantity="0.000000"
+                     partyId="JOHN_SUPPLIER"
+                     productId="CMP_ZIPPER"
+                     supplierPrefOrderId="10_MAIN_SUPPL"
+                     supplierProductId="ZIP-STD"
+                     supplierProductName="Standard Zipper"/>
+    <SupplierProduct availableFromDate="2025-01-01 00:00:00.000"
+                     canDropShip="N"
+                     currencyUomId="INR"
+                     lastPrice="15.00"
+                     minimumOrderQuantity="0.000000"
+                     partyId="JOHN_SUPPLIER"
+                     productId="CMP_THREAD"
+                     supplierPrefOrderId="10_MAIN_SUPPL"
+                     supplierProductId="THRD-BRBLK"
+                     supplierProductName="Thread (Brown/Black)"/>
+    <SupplierProduct availableFromDate="2025-01-01 00:00:00.000"
+                     canDropShip="N"
+                     currencyUomId="INR"
+                     lastPrice="40.00"
+                     minimumOrderQuantity="0.000000"
+                     partyId="JOHN_SUPPLIER"
+                     productId="CMP_BUTTON"
+                     supplierPrefOrderId="10_MAIN_SUPPL"
+                     supplierProductId="MBUTTON"
+                     supplierProductName="Magnetic Button"/>
+
+    <!-- ========================================= -->
+    <!-- 🟢 NEW SUPPLIER PRODUCTS for Wallet Components -->
+    <!-- ========================================= -->
+    <SupplierProduct availableFromDate="2025-01-01 00:00:00.000"
+                     canDropShip="N"
+                     currencyUomId="INR"
+                     lastPrice="200.00"
+                     minimumOrderQuantity="0.000000"
+                     partyId="JOHN_SUPPLIER"
+                     productId="CMP_INNER_LINING"
+                     supplierPrefOrderId="10_MAIN_SUPPL"
+                     supplierProductId="LINING-01"
+                     supplierProductName="Inner Lining Material"/>
+    <SupplierProduct availableFromDate="2025-01-01 00:00:00.000"
+                     canDropShip="N"
+                     currencyUomId="INR"
+                     lastPrice="35.00"
+                     minimumOrderQuantity="0.000000"
+                     partyId="JOHN_SUPPLIER"
+                     productId="CMP_BUTTON_CLIP"
+                     supplierPrefOrderId="10_MAIN_SUPPL"
+                     supplierProductId="CLIP-01"
+                     supplierProductName="Button Clip"/>
+
+    <!-- =========================
+         4) FACILITY INVENTORY RULES
+         ========================= -->
+    <!-- Finished good now has a facility record -->
+    <ProductFacility productId="PRD_WSLING_001"    facilityId="LLX_MAIN_PLANT" minimumStock="10" reorderQuantity="5"  daysToShip="1"/>
+
+    <!-- 🟢 NEW: Facility inventory for Men's Wallet -->
+    <ProductFacility productId="PRD_LL_0002" facilityId="LLX_MAIN_PLANT" minimumStock="20" reorderQuantity="10" daysToShip="1"/>
+
+    <!-- Components keep minimumStock=25 -->
+    <ProductFacility productId="CMP_LEATHER_SHEET" facilityId="LLX_MAIN_PLANT" minimumStock="25" reorderQuantity="10" daysToShip="1"/>
+    <ProductFacility productId="CMP_ZIPPER"        facilityId="LLX_MAIN_PLANT" minimumStock="25" reorderQuantity="25" daysToShip="1"/>
+    <ProductFacility productId="CMP_THREAD"        facilityId="LLX_MAIN_PLANT" minimumStock="25" reorderQuantity="10" daysToShip="1"/>
+    <ProductFacility productId="CMP_BUTTON"        facilityId="LLX_MAIN_PLANT" minimumStock="25" reorderQuantity="10" daysToShip="1"/>
+
+    <!-- 🟢 NEW: Facility inventory for wallet components -->
+    <ProductFacility productId="CMP_INNER_LINING" facilityId="LLX_MAIN_PLANT" minimumStock="30" reorderQuantity="15" daysToShip="1"/>
+    <ProductFacility productId="CMP_BUTTON_CLIP" facilityId="LLX_MAIN_PLANT" minimumStock="30" reorderQuantity="15" daysToShip="1"/>
+
+    <!-- =============================
+Routing: Sling Bag Production
+============================= -->
+    <WorkEffort workEffortId="ROUTE_WSLING"
+                workEffortTypeId="ROUTING"
+                currentStatusId="ROU_ACTIVE"
+                workEffortName="Sling Bag Production Route"
+                description="Complete production steps for Women Sling Bag"
+                revisionNumber="1"
+                quantityToProduce="0"/>
+
+
+
+    <!-- Tasks -->
+    <WorkEffort workEffortId="TASK_CUTTING_WB"
+                workEffortTypeId="ROU_TASK"
+                workEffortPurposeTypeId="ROU_ASSEMBLING"
+                currentStatusId="ROU_ACTIVE"
+                workEffortName="Leather Cutting"
+                description="Cut leather pieces for body, flap, and strap"
+                revisionNumber="1"
+                estimatedMilliSeconds="7200000"
+                estimatedSetupMillis="0"/>
+    <WorkEffort workEffortId="TASK_STITCHING_WB"
+                workEffortTypeId="ROU_TASK"
+                workEffortPurposeTypeId="ROU_ASSEMBLING"
+                currentStatusId="ROU_ACTIVE"
+                workEffortName="Stitching"
+                description="Assemble with thread and lining"
+                revisionNumber="1"
+                estimatedMilliSeconds="10800000"
+                estimatedSetupMillis="0"/>
+    <WorkEffort workEffortId="TASK_HARDWARE_WB"
+                workEffortTypeId="ROU_TASK"
+                workEffortPurposeTypeId="ROU_ASSEMBLING"
+                currentStatusId="ROU_ACTIVE"
+                workEffortName="Hardware Fixing"
+                description="Attach buckles, zipper, and strap rings"
+                revisionNumber="1"
+                estimatedMilliSeconds="3600000"
+                estimatedSetupMillis="0"/>
+    <WorkEffort workEffortId="TASK_FINISHING_WB"
+                workEffortTypeId="ROU_TASK"
+                workEffortPurposeTypeId="ROU_ASSEMBLING"
+                currentStatusId="ROU_ACTIVE"
+                workEffortName="Finishing And Branding"
+                description="Edge finishing, emboss logo, tag"
+                revisionNumber="1"
+                estimatedMilliSeconds="3600000"
+                estimatedSetupMillis="0"/>
+
+
+
+    <!-- Link tasks to routing (sequence) -->
+    <WorkEffortAssoc workEffortIdFrom="ROUTE_WSLING" workEffortIdTo="TASK_CUTTING_WB"
+                     workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="10"
+                     fromDate="2025-01-01 00:00:00.000"/>
+    <WorkEffortAssoc workEffortIdFrom="ROUTE_WSLING" workEffortIdTo="TASK_STITCHING_WB"
+                     workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="20"
+                     fromDate="2025-01-01 00:00:00.000"/>
+    <WorkEffortAssoc workEffortIdFrom="ROUTE_WSLING" workEffortIdTo="TASK_HARDWARE_WB"
+                     workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="30"
+                     fromDate="2025-01-01 00:00:00.000"/>
+    <WorkEffortAssoc workEffortIdFrom="ROUTE_WSLING" workEffortIdTo="TASK_FINISHING_WB"
+                     workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="40"
+                     fromDate="2025-01-01 00:00:00.000"/>
+    <!-- Associate routing to finished good -->
+    <WorkEffortGoodStandard workEffortId="ROUTE_WSLING"
+                            productId="PRD_WSLING_001"
+                            workEffortGoodStdTypeId="ROU_PROD_TEMPLATE"
+                            statusId="WEGS_CREATED"
+                            fromDate="2025-01-01 00:00:00.000"/>
+
+    <!-- ========================================= -->
+    <!-- 🟢 NEW ROUTING: Wallet Production -->
+    <!-- ========================================= -->
+    <WorkEffort workEffortId="ROUT_LL_0002"
+                workEffortTypeId="ROUTING"
+                currentStatusId="ROU_ACTIVE"
+                workEffortName="Wallet Stitching And Finishing"
+                description="Complete production steps for Men's Wallet"
+                revisionNumber="1"
+                quantityToProduce="0"/>
+
+    <!-- 🟢 NEW: Wallet Production Tasks -->
+    <WorkEffort workEffortId="TASK_CUT_WALLET"
+                workEffortTypeId="ROU_TASK"
+                workEffortPurposeTypeId="ROU_ASSEMBLING"
+                currentStatusId="ROU_ACTIVE"
+                workEffortName="Leather Pattern Cutting"
+                description="Cut leather pieces for wallet body and compartments"
+                revisionNumber="1"
+                estimatedMilliSeconds="3600000"
+                estimatedSetupMillis="0"/>
+    <WorkEffort workEffortId="TASK_STITCH_WALLET"
+                workEffortTypeId="ROU_TASK"
+                workEffortPurposeTypeId="ROU_ASSEMBLING"
+                currentStatusId="ROU_ACTIVE"
+                workEffortName="Wallet Stitching"
+                description="Stitch wallet compartments and inner lining"
+                revisionNumber="1"
+                estimatedMilliSeconds="5400000"
+                estimatedSetupMillis="0"/>
+    <WorkEffort workEffortId="TASK_FINISH_WALLET"
+                workEffortTypeId="ROU_TASK"
+                workEffortPurposeTypeId="ROU_ASSEMBLING"
+                currentStatusId="ROU_ACTIVE"
+                workEffortName="Wallet Finishing"
+                description="Add button clip, emboss logo, quality check"
+                revisionNumber="1"
+                estimatedMilliSeconds="1800000"
+                estimatedSetupMillis="0"/>
+
+    <!-- 🟢 Link wallet tasks to routing -->
+    <WorkEffortAssoc workEffortIdFrom="ROUT_LL_0002" workEffortIdTo="TASK_CUT_WALLET"
+                     workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="10"
+                     fromDate="2025-01-01 00:00:00.000"/>
+    <WorkEffortAssoc workEffortIdFrom="ROUT_LL_0002" workEffortIdTo="TASK_STITCH_WALLET"
+                     workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="20"
+                     fromDate="2025-01-01 00:00:00.000"/>
+    <WorkEffortAssoc workEffortIdFrom="ROUT_LL_0002" workEffortIdTo="TASK_FINISH_WALLET"
+                     workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="30"
+                     fromDate="2025-01-01 00:00:00.000"/>
+
+    <!-- 🟢 Associate routing to wallet product -->
+    <WorkEffortGoodStandard workEffortId="ROUT_LL_0002"
+                            productId="PRD_LL_0002"
+                            workEffortGoodStdTypeId="ROU_PROD_TEMPLATE"
+                            statusId="WEGS_CREATED"
+                            fromDate="2025-01-01 00:00:00.000"/>
+
+
+
+    <!-- =========================
+         5) BILL OF MATERIALS (BOM)
+         ========================= -->
+    <ProductAssoc productId="PRD_WSLING_001" productIdTo="CMP_LEATHER_SHEET"
+                  productAssocTypeId="MANUF_COMPONENT" fromDate="2025-01-01 00:00:00.000" routingWorkEffortId="TASK_CUTTING_WB"
+                  sequenceNum="10" quantity="1.0" scrapFactor="0.00"/>
+    <ProductAssoc productId="PRD_WSLING_001" productIdTo="CMP_ZIPPER"
+                  productAssocTypeId="MANUF_COMPONENT" fromDate="2025-01-01 00:00:00.000" routingWorkEffortId="TASK_STITCHING_WB"
+                  sequenceNum="20" quantity="1.0" scrapFactor="0.00"/>
+    <ProductAssoc productId="PRD_WSLING_001" productIdTo="CMP_THREAD"
+                  productAssocTypeId="MANUF_COMPONENT" fromDate="2025-01-01 00:00:00.000" routingWorkEffortId="TASK_HARDWARE_WB"
+                  sequenceNum="30" quantity="1.0" scrapFactor="0.00"/>
+    <ProductAssoc productId="PRD_WSLING_001" productIdTo="CMP_BUTTON"
+                  productAssocTypeId="MANUF_COMPONENT" fromDate="2025-01-01 00:00:00.000" routingWorkEffortId="TASK_FINISHING_WB"
+                  sequenceNum="40" quantity="1.0" scrapFactor="0.00"/>
+
+    <!-- ========================================= -->
+    <!-- 🟢 NEW BOM: Men's Wallet Components -->
+    <!-- ========================================= -->
+    <ProductAssoc productId="PRD_LL_0002" productIdTo="CMP_LEATHER_SHEET"
+                  productAssocTypeId="MANUF_COMPONENT" fromDate="2025-01-01 00:00:00.000" routingWorkEffortId="TASK_CUT_WALLET"
+                  sequenceNum="10" quantity="0.5" scrapFactor="0.00"/>
+    <ProductAssoc productId="PRD_LL_0002" productIdTo="CMP_INNER_LINING"
+                  productAssocTypeId="MANUF_COMPONENT" fromDate="2025-01-01 00:00:00.000" routingWorkEffortId="TASK_STITCH_WALLET"
+                  sequenceNum="20" quantity="1.0" scrapFactor="0.00"/>
+    <ProductAssoc productId="PRD_LL_0002" productIdTo="CMP_THREAD"
+                  productAssocTypeId="MANUF_COMPONENT" fromDate="2025-01-01 00:00:00.000" routingWorkEffortId="TASK_STITCH_WALLET"
+                  sequenceNum="30" quantity="1.0" scrapFactor="0.00"/>
+    <ProductAssoc productId="PRD_LL_0002" productIdTo="CMP_BUTTON_CLIP"
+                  productAssocTypeId="MANUF_COMPONENT" fromDate="2025-01-01 00:00:00.000" routingWorkEffortId="TASK_FINISH_WALLET"
+                  sequenceNum="40" quantity="1.0" scrapFactor="0.00"/>
+
+
+
+
+
+    <!-- ================================================================== -->
+    <!-- GL ACCOUNT CLASSES -->
+    <!-- ================================================================== -->
+    <GlAccountClass glAccountClassId="DEBIT" description="Debit" sequenceNum="100"/>
+    <GlAccountClass glAccountClassId="ASSET" description="Asset" parentClassId="DEBIT" sequenceNum="110"/>
+    <GlAccountClass glAccountClassId="CURRENT_ASSET" description="Current Asset" parentClassId="ASSET" sequenceNum="115"/>
+    <GlAccountClass glAccountClassId="INVENTORY_ASSET" description="Inventory Asset" parentClassId="CURRENT_ASSET" sequenceNum="122"/>
+    <GlAccountClass glAccountClassId="EXPENSE" description="Expense" parentClassId="DEBIT" sequenceNum="150"/>
+    <GlAccountClass glAccountClassId="COGS_EXPENSE" description="Cost of Goods Sold Expense" parentClassId="EXPENSE" sequenceNum="162"/>
+    <GlAccountClass glAccountClassId="CREDIT" description="Credit" sequenceNum="200"/>
+    <GlAccountClass glAccountClassId="LIABILITY" description="Liability" parentClassId="CREDIT" sequenceNum="210"/>
+    <GlAccountClass glAccountClassId="CURRENT_LIABILITY" description="Current Liability" parentClassId="LIABILITY" sequenceNum="215"/>
+    <GlAccountClass glAccountClassId="EQUITY" description="Equity" parentClassId="CREDIT" sequenceNum="230"/>
+    <GlAccountClass glAccountClassId="REVENUE" description="Revenue" parentClassId="CREDIT" sequenceNum="250"/>
+    <!-- ================================================================== -->
+    <!-- GL ACCOUNT TYPES -->
+    <!-- ================================================================== -->
+    <GlAccountType glAccountTypeId="INVENTORY_ACCOUNT" description="Inventory" hasTable="N"/>
+    <GlAccountType glAccountTypeId="RAWMAT_INVENTORY" description="Raw Materials Inventory" hasTable="N"/>
+    <GlAccountType glAccountTypeId="WIP_INVENTORY" description="Work In Progress Inventory" hasTable="N"/>
+    <GlAccountType glAccountTypeId="ACCOUNTS_PAYABLE" description="Accounts Payable" hasTable="N"/>
+    <GlAccountType glAccountTypeId="ACCOUNTS_RECEIVABLE" description="Accounts Receivable" hasTable="N"/>
+    <GlAccountType glAccountTypeId="COGS_ACCOUNT" description="Cost of Goods Sold" hasTable="N"/>
+    <GlAccountType glAccountTypeId="SALES_ACCOUNT" description="Sales" hasTable="N"/>
+    <GlAccountType glAccountTypeId="RETAINED_EARNINGS" description="Retained Earnings" hasTable="N"/>
+    <!-- ================================================================== -->
+    <!-- GL ACCOUNTS -->
+    <!-- ================================================================== -->
+    <GlAccount glAccountId="INV_MAIN"
+               glAccountTypeId="INVENTORY_ACCOUNT"
+               glAccountClassId="INVENTORY_ASSET"
+               glAccountName="Inventory"
+               glAccountCode="1200"
+               description="Raw materials and finished goods held in warehouse"
+               organizationPartyId="LEATHERLUX_ORG"
+               glResourceTypeId="MONEY"
+               accountConventionTypeId="DEBIT"
+               enabled="Y"/>
+    <GlAccount glAccountId="INV_RAWMAT"
+               glAccountTypeId="RAWMAT_INVENTORY"
+               glAccountClassId="INVENTORY_ASSET"
+               glAccountName="Raw Materials Inventory"
+               glAccountCode="1201"
+               description="Raw materials for leather product manufacturing"
+               organizationPartyId="LEATHERLUX_ORG"
+               glResourceTypeId="RAW_MATERIALS"
+               accountConventionTypeId="DEBIT"
+               enabled="Y"/>
+    <GlAccount glAccountId="INV_WIP"
+               glAccountTypeId="WIP_INVENTORY"
+               glAccountClassId="INVENTORY_ASSET"
+               glAccountName="Work In Progress Inventory"
+               glAccountCode="1202"
+               description="Partially completed leather goods in production"
+               organizationPartyId="LEATHERLUX_ORG"
+               glResourceTypeId="FINISHED_GOODS"
+               accountConventionTypeId="DEBIT"
+               enabled="Y"/>
+    <GlAccount glAccountId="AR_ACCOUNT"
+               glAccountTypeId="ACCOUNTS_RECEIVABLE"
+               glAccountClassId="CURRENT_ASSET"
+               glAccountName="Accounts Receivable"
+               glAccountCode="1100"
+               description="Amounts owed by customers for sales"
+               organizationPartyId="LEATHERLUX_ORG"
+               glResourceTypeId="MONEY"
+               accountConventionTypeId="DEBIT"
+               enabled="Y"/>
+    <GlAccount glAccountId="AP_ACCOUNT"
+               glAccountTypeId="ACCOUNTS_PAYABLE"
+               glAccountClassId="CURRENT_LIABILITY"
+               glAccountName="Accounts Payable"
+               glAccountCode="2100"
+               description="Amounts owed to suppliers for inventory purchases"
+               organizationPartyId="LEATHERLUX_ORG"
+               glResourceTypeId="MONEY"
+               accountConventionTypeId="CREDIT"
+               enabled="Y"/>
+    <GlAccount glAccountId="COGS_ACCOUNT"
+               glAccountTypeId="COGS_ACCOUNT"
+               glAccountClassId="COGS_EXPENSE"
+               glAccountName="Cost of Goods Sold"
+               glAccountCode="5000"
+               description="Cost of leather and labor for goods sold"
+               organizationPartyId="LEATHERLUX_ORG"
+               glResourceTypeId="MONEY"
+               accountConventionTypeId="DEBIT"
+               enabled="Y"/>
+    <GlAccount glAccountId="SALES_REVENUE"
+               glAccountTypeId="SALES_ACCOUNT"
+               glAccountClassId="REVENUE"
+               glAccountName="Sales Revenue"
+               glAccountCode="4000"
+               description="Revenue from sale of leather products"
+               organizationPartyId="LEATHERLUX_ORG"
+               glResourceTypeId="MONEY"
+               accountConventionTypeId="CREDIT"
+               enabled="Y"/>
+    <GlAccount glAccountId="RETAINED_EARN"
+               glAccountTypeId="RETAINED_EARNINGS"
+               glAccountClassId="EQUITY"
+               glAccountName="Retained Earnings"
+               glAccountCode="3100"
+               description="Accumulated profits retained in LeatherLux"
+               organizationPartyId="LEATHERLUX_ORG"
+               glResourceTypeId="MONEY"
+               accountConventionTypeId="CREDIT"
+               enabled="Y"/>
+    <!-- ================================================================== -->
+    <!-- GL JOURNAL (must come before PartyAcctgPreference) -->
+    <!-- ================================================================== -->
+    <GlJournal
+            organizationPartyId="LEATHERLUX_ORG"
+            glJournalId="LX_ERR_JRN"
+            glJournalName="LeatherLux Suspense Transactions"/>
+    <!-- ================================================================== -->
+    <!-- ACCOUNTING PREFERENCES -->
+    <!-- ================================================================== -->
+    <PartyAcctgPreference
+            partyId="LEATHERLUX_ORG"
+            baseCurrencyUomId="INR"
+            cogsMethodId="COGS_AVG_COST"
+            invoiceIdPrefix="LXINV"
+            orderIdPrefix="LXORD"
+            quoteIdPrefix="LXQ"
+            errorGlJournalId="LX_ERR_JRN"/>
+
+</entity-engine-xml>

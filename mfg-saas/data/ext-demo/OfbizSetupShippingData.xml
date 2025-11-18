@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+    
+    http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+
+<entity-engine-xml>
+    <Party partyId="EXPRESSBEES" partyTypeId="PARTY_GROUP" statusId="PARTY_ENABLED"/>
+    <Party partyId="ECOM_EXPRESS" partyTypeId="PARTY_GROUP" statusId="PARTY_ENABLED"/>
+    <Party partyId="DELHIVERY" partyTypeId="PARTY_GROUP" statusId="PARTY_ENABLED"/>
+
+    <PartyGroup partyId="EXPRESSBEES" groupName="Expressbees"/>
+    <PartyGroup partyId="ECOM_EXPRESS" groupName="Ecom Express"/>
+    <PartyGroup partyId="DELHIVERY" groupName="Delhivery"/>
+
+    <PartyRole partyId="EXPRESSBEES" roleTypeId="CARRIER"/>
+    <PartyRole partyId="ECOM_EXPRESS" roleTypeId="CARRIER"/>
+    <PartyRole partyId="DELHIVERY" roleTypeId="CARRIER"/>
+
+    <PartyStatus partyId="EXPRESSBEES" statusId="PARTY_ENABLED" statusDate="2001-01-01 12:00:00.0"/>
+    <PartyStatus partyId="ECOM_EXPRESS" statusId="PARTY_ENABLED" statusDate="2001-01-01 12:00:00.0"/>
+    <PartyStatus partyId="DELHIVERY" statusId="PARTY_ENABLED" statusDate="2001-01-01 12:00:00.0"/>
+    <PartyStatus partyId="_NA_" statusId="PARTY_ENABLED" statusDate="2001-01-01 12:00:00.0"/>
+
+    <ShipmentMethodType description="No Shipping" shipmentMethodTypeId="NO_SHIPPING"/>
+    <ShipmentMethodType description="Local Delivery" shipmentMethodTypeId="LOCAL_DELIVERY"/>
+
+    <!-- Expressbees Delivery Options -->
+    <ShipmentMethodType description="Same Day Delivery" shipmentMethodTypeId="SAME_DAY"/>
+    <ShipmentMethodType description="Next Day Delivery" shipmentMethodTypeId="NEXT_DAY"/>
+    <ShipmentMethodType description="Standard Delivery" shipmentMethodTypeId="STANDARD"/>
+    <ShipmentMethodType description="Express Delivery" shipmentMethodTypeId="EXPRESS"/>
+    <ShipmentMethodType description="Economy Delivery" shipmentMethodTypeId="ECONOMY"/>
+
+    <!-- Ecom Express Delivery Options -->
+    <ShipmentMethodType description="Same Day Express" shipmentMethodTypeId="EC_SAME_DAY_EXP"/>
+    <ShipmentMethodType description="Next Day Express" shipmentMethodTypeId="EC_NEXT_DAY_EXP"/>
+    <ShipmentMethodType description="Standard Parcel" shipmentMethodTypeId="EC_STANDARD_PAR"/>
+    <ShipmentMethodType description="Economic Parcel" shipmentMethodTypeId="EC_ECONOMIC_PAR"/>
+    <ShipmentMethodType description="Priority Parcel" shipmentMethodTypeId="EC_PRIORITY_PAR"/>
+
+    <!-- Delhivery Delivery Options -->
+    <ShipmentMethodType description="Same Day Delivery" shipmentMethodTypeId="DEL_SAME_DAY"/>
+    <ShipmentMethodType description="Next Day Delivery" shipmentMethodTypeId="DEL_NEXT_DAY"/>
+    <ShipmentMethodType description="Surface Express" shipmentMethodTypeId="DEL_SURFACE_EXP"/>
+    <ShipmentMethodType description="Parcel" shipmentMethodTypeId="DEL_PARCEL"/>
+    <ShipmentMethodType description="Gati Sure" shipmentMethodTypeId="DEL_GATI_SURE"/>
+
+    <!-- Local options -->
+    <CarrierShipmentMethod partyId="_NA_" roleTypeId="CARRIER" shipmentMethodTypeId="NO_SHIPPING" sequenceNumber="5"/>
+
+    <!-- Expressbees shipping options -->
+    <CarrierShipmentMethod shipmentMethodTypeId="SAME_DAY" partyId="EXPRESSBEES" roleTypeId="CARRIER" sequenceNumber="01" carrierServiceCode="SAMEDAY"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="NEXT_DAY" partyId="EXPRESSBEES" roleTypeId="CARRIER" sequenceNumber="02" carrierServiceCode="NEXTDAY"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="STANDARD" partyId="EXPRESSBEES" roleTypeId="CARRIER" sequenceNumber="03" carrierServiceCode="STANDARD"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="EXPRESS" partyId="EXPRESSBEES" roleTypeId="CARRIER" sequenceNumber="04" carrierServiceCode="EXPRESS"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="ECONOMY" partyId="EXPRESSBEES" roleTypeId="CARRIER" sequenceNumber="05" carrierServiceCode="ECONOMY"/>
+
+    <!-- Ecom Express shipping options -->
+    <CarrierShipmentMethod shipmentMethodTypeId="EC_SAME_DAY_EXP" partyId="ECOM_EXPRESS" roleTypeId="CARRIER" sequenceNumber="01" carrierServiceCode="SAME_DAY_EXPRESS"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="EC_NEXT_DAY_EXP" partyId="ECOM_EXPRESS" roleTypeId="CARRIER" sequenceNumber="02" carrierServiceCode="NEXT_DAY_EXPRESS"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="EC_STANDARD_PAR" partyId="ECOM_EXPRESS" roleTypeId="CARRIER" sequenceNumber="03" carrierServiceCode="STANDARD_PARCEL"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="EC_ECONOMIC_PAR" partyId="ECOM_EXPRESS" roleTypeId="CARRIER" sequenceNumber="04" carrierServiceCode="ECONOMIC_PARCEL"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="EC_PRIORITY_PAR" partyId="ECOM_EXPRESS" roleTypeId="CARRIER" sequenceNumber="05" carrierServiceCode="PRIORITY_PARCEL"/>
+
+    <!-- Delhivery shipping options -->
+    <CarrierShipmentMethod shipmentMethodTypeId="DEL_SAME_DAY" partyId="DELHIVERY" roleTypeId="CARRIER" sequenceNumber="01" carrierServiceCode="SAME_DAY"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="DEL_NEXT_DAY" partyId="DELHIVERY" roleTypeId="CARRIER" sequenceNumber="02" carrierServiceCode="NEXT_DAY"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="DEL_SURFACE_EXP" partyId="DELHIVERY" roleTypeId="CARRIER" sequenceNumber="03" carrierServiceCode="SURFACE_EXPRESS"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="DEL_PARCEL" partyId="DELHIVERY" roleTypeId="CARRIER" sequenceNumber="04" carrierServiceCode="PARCEL"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="DEL_GATI_SURE" partyId="DELHIVERY" roleTypeId="CARRIER" sequenceNumber="05" carrierServiceCode="GATI_SURE"/>
+
+    <QuantityBreak fromQuantity="0.0" quantityBreakId="9000" quantityBreakTypeId="SHIP_WEIGHT" thruQuantity="5.0"/>
+    <QuantityBreak fromQuantity="5.0" quantityBreakId="9001" quantityBreakTypeId="SHIP_WEIGHT" thruQuantity="10.0"/>
+    <QuantityBreak fromQuantity="10.0" quantityBreakId="9002" quantityBreakTypeId="SHIP_WEIGHT" thruQuantity="20.0"/>
+    <QuantityBreak fromQuantity="20.0" quantityBreakId="9003" quantityBreakTypeId="SHIP_WEIGHT" thruQuantity="50.0"/>
+
+    <ShipmentBoxType shipmentBoxTypeId="SMALL_BOX" description="Small Box" dimensionUomId="LEN_cm" boxLength="20" boxWidth="15" boxHeight="10"/>
+    <ShipmentBoxType shipmentBoxTypeId="MEDIUM_BOX" description="Medium Box" dimensionUomId="LEN_cm" boxLength="30" boxWidth="25" boxHeight="20"/>
+    <ShipmentBoxType shipmentBoxTypeId="LARGE_BOX" description="Large Box" dimensionUomId="LEN_cm" boxLength="50" boxWidth="40" boxHeight="30"/>
+    <ShipmentBoxType shipmentBoxTypeId="ENVELOPE" description="Padded Envelope" dimensionUomId="LEN_cm" boxLength="25" boxWidth="20" boxHeight="2"/>
+    <ShipmentBoxType shipmentBoxTypeId="STANDARD_PKG" description="Standard Packaging" dimensionUomId="LEN_cm" boxLength="30" boxWidth="25" boxHeight="15"/>
+
+    <CarrierShipmentBoxType shipmentBoxTypeId="SMALL_BOX" partyId="EXPRESSBEES" packagingTypeCode="SMALL"/>
+    <CarrierShipmentBoxType shipmentBoxTypeId="MEDIUM_BOX" partyId="EXPRESSBEES" packagingTypeCode="MEDIUM"/>
+    <CarrierShipmentBoxType shipmentBoxTypeId="LARGE_BOX" partyId="EXPRESSBEES" packagingTypeCode="LARGE"/>
+    <CarrierShipmentBoxType shipmentBoxTypeId="ENVELOPE" partyId="EXPRESSBEES" packagingTypeCode="ENVELOPE"/>
+    <CarrierShipmentBoxType shipmentBoxTypeId="STANDARD_PKG" partyId="EXPRESSBEES" packagingTypeCode="STANDARD"/>
+
+    <CarrierShipmentBoxType shipmentBoxTypeId="SMALL_BOX" partyId="ECOM_EXPRESS" packagingTypeCode="SMALL"/>
+    <CarrierShipmentBoxType shipmentBoxTypeId="MEDIUM_BOX" partyId="ECOM_EXPRESS" packagingTypeCode="MEDIUM"/>
+    <CarrierShipmentBoxType shipmentBoxTypeId="LARGE_BOX" partyId="ECOM_EXPRESS" packagingTypeCode="LARGE"/>
+    <CarrierShipmentBoxType shipmentBoxTypeId="ENVELOPE" partyId="ECOM_EXPRESS" packagingTypeCode="ENVELOPE"/>
+    <CarrierShipmentBoxType shipmentBoxTypeId="STANDARD_PKG" partyId="ECOM_EXPRESS" packagingTypeCode="STANDARD"/>
+
+    <CarrierShipmentBoxType shipmentBoxTypeId="SMALL_BOX" partyId="DELHIVERY" packagingTypeCode="SMALL"/>
+    <CarrierShipmentBoxType shipmentBoxTypeId="MEDIUM_BOX" partyId="DELHIVERY" packagingTypeCode="MEDIUM"/>
+    <CarrierShipmentBoxType shipmentBoxTypeId="LARGE_BOX" partyId="DELHIVERY" packagingTypeCode="LARGE"/>
+    <CarrierShipmentBoxType shipmentBoxTypeId="ENVELOPE" partyId="DELHIVERY" packagingTypeCode="ENVELOPE"/>
+    <CarrierShipmentBoxType shipmentBoxTypeId="STANDARD_PKG" partyId="DELHIVERY" packagingTypeCode="STANDARD"/>
+</entity-engine-xml>
